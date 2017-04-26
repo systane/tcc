@@ -1,0 +1,15 @@
+proximo passos:
+
+1 - Tirar a dupla chamada da função analisa_dados_brutos;
+2 - organizar as ideias para automatizar as chamadas dos audios nas execuções do programa. Preciso executar o programa uma vez para cada repetição dos 9 comandos gravados;
+3 - fazer um shell script para poder executar o programa e criar um arquivo txt de acordo com o nome do audio passado como parametro na execução;
+4 - o shell script vai ler o comando digitado no Banco_de_comando e logo em seguida procurará na pasta Banco_de_audio o arquivo com o respectivo nome lido do txt de indice [1].
+5 - esse mesmo script em shell criará um txt com o respectivo nome do audio executado.
+
+
+referencias:
+http://www.cplusplus.com/doc/tutorial/files/
+http://www.hardware.com.br/comunidade/ler-arquivos/1061210/
+https://pt.wikibooks.org/wiki/Programar_em_C%2B%2B/Manipulando_strings
+https://git-scm.com/book/pt-br/v1/Git-Essencial-Visualizando-o-Hist%C3%B3rico-de-Commits
+http://rogerdudler.github.io/git-guide/index.pt_BR.html
