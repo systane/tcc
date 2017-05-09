@@ -1,0 +1,487 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,12pt,twoside,openright]{report}
+\usepackage[bibjustif]{abntex2cite}
+\usepackage[brazil]{babel}
+\usepackage{setspace}
+\usepackage{amsthm}
+\usepackage[figuresright]{rotating}
+\usepackage{graphics}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{amsmath}
+\usepackage{picinpar}
+\usepackage{colortbl}
+\usepackage{wasysym}
+\usepackage{txfonts}
+\usepackage{pb-diagram}
+\usepackage{relsize}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{subfigure}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[hang,small,bf]{caption}
+\usepackage[compact]{titlesec}
+\usepackage[left=3cm,top=3cm,right=2cm,bottom=3cm]{geometry}%esq e sup 3cm  ; dir e inf 2cm
+\usepackage[subfigure]{tocloft}
+\usepackage{subfigure}
+
+\renewcommand{\cftfigfont}{Figura }
+\renewcommand{\cfttabfont}{Tabela }
+
+\renewcommand{\cftfigaftersnum}{ - }
+\renewcommand{\cfttabaftersnum}{ - }
+
+\captionsetup{font=footnotesize,labelsep=endash}
+
+\def\baselinestretch{1.6}
+\pagestyle{myheadings}
+
+\begin{document}
+\titlespacing{\section}{0cm}{1.5cm}{1.5cm}
+\titlespacing{\subsection}{0cm}{1.5cm}{1.5cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CAPA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setboolean{@twoside}{true}
+\title{
+	\vspace*{-120pt}
+	\hspace*{+55pt}Universidade Estadual Paulista
+	\newline
+	\hspace*{+45pt}Instituto de Bioci\^{e}ncias, Letras e Ci\^{e}ncias Exatas
+	\newline
+	\hspace*{+30pt}Departamento de Ci\^{e}ncia da Computa\c{c}\~{a}o e Estat\'{i}stica
+	\newline
+	\newline
+	\newline
+	\hspace*{+50pt}Luis Fernando Teixeira Silva
+	\newline
+	\newline
+	\newline
+	Um sistema para reconhecimento de comandos falados dependente do locutor
+}
+
+\author{{\tiny .}}
+\date{\vspace*{+60pt}S\~{a}o Jos\'{e} do Rio Preto - SP \\ 2017}
+\maketitle
+
+\newpage\
+\thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PAGINA DE ROSTO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{empty}
+\begin{tabular}{p{430pt}}
+\pagestyle{empty}
+\begin{center}
+\pagestyle{empty}
+\LARGE{\hspace*{+50pt}Luis Fernando Teixeira Silva\newline \newline \newline \newline \newline Um sistema para reconhecimento de comandos falados dependente do locutor}
+\end{center}
+
+\vspace*{+30pt}
+\hspace*{+200pt}
+\begin{tabular}{p{200pt}}
+	\singlespacing{\small Monografia apresentada ao Programa de gradua\c{c}\~{a}o em Ci\^{e}ncia da Computa\c{c}\~{a}o da UNESP para obten\c{c}\~{a}o do t\'{i}tulo de Bacharel. \newline \newline Orientador: Prof. Dr. Rodrigo Capobianco Guido} \\
+\end{tabular}
+\newline 
+\newline
+\begin{center}
+{\large S\~{a}o Jos\'{e} do Rio Preto - SP \\ 2017}
+\end{center}
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FICHA CATALOGRAFICA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\thispagestyle{empty}
+\noindent
+AUTORIZO A DIVULGA\c{C}\~{A}O TOTAL OU PARCIAL DESTE TRABALHO, POR\\QUALQUER MEIO CONVENCIONAL OU ELETR\^{O}NICO, PARA  FINS DE ES-\\TUDO E PESQUISA, DESDE QUE CITADA A FONTE
+
+\begin{center}
+\vspace*{+260pt}
+{\footnotesize \hspace*{-81pt}Ficha catalogr\'{a}fica elaborada pelo Servi\c{c}o de Biblioteca do IBILCE/UNESP}
+\end{center}
+
+\vspace*{+5pt}
+
+\begin{tabular}{|p{12.5cm}|}
+\hline
+{\singlespacing
+\vspace*{-20pt}
+\hspace*{+40pt} {\small Luis Fernando Teixeira Silva} \newline
+\hspace*{+40pt} {\small titulo} \newline
+\hspace*{+20pt} {\small titulo} \newline
+\hspace*{+20pt} {\small titulo. / fulano de tal; orientador} \newline
+\hspace*{+20pt} {\small Rodrigo Capobianco Guido. S\~{a}o Jos\'{e} do Rio Preto, 2017.} \newline
+\hspace*{+40pt} {\small xxx p.} \newline
+
+\hspace*{+40pt} {\small Monografia (TCC} \newline
+\hspace*{+20pt} {\small TCC} \newline
+\hspace*{+20pt} {\small TCC, 2017.} \newline \newline
+
+\hspace*{+40pt} {\small 1. Processamento de sinais. 2. Reconhecimento de locutor. 3. Ac\'{u}s-} \newline
+\hspace*{+20pt} {\small tica. 4. Energia. 5. Escala \textit{Bark}. I. Capobianco Guido, Rodrigo, orient.} \newline
+\hspace*{+20pt} {\small II. T\'{i}tulo.} \newline \newline
+}
+\\
+\hline
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FOLHA DE APROVACAO: MANTER EM BRANCO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}
+\newpage\ \thispagestyle{empty} \newpage
+\thispagestyle{empty}
+\newpage\ \thispagestyle{empty} \newpage
+\thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DEDICATORIA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\thispagestyle{empty}
+\vspace*{+480pt}
+\hspace*{+160pt}
+\begin{tabular}{p{200pt}}
+	{\small Dedico ao...}
+\end{tabular}
+
+\newpage\ \thispagestyle{empty} \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AGRADECIMENTOS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\thispagestyle{empty}
+\begin{center}{\LARGE \textbf{Agradecimentos}}\end{center}
+\vspace{+60pt}
+A Deus, ....
+
+\newpage\ \thispagestyle{empty} \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PENSAMENTO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\vspace*{+480pt}
+\thispagestyle{empty}
+\begin{flushright}
+\textit{``No fim tudo d\'{a} certo, e se n\~{a}o deu certo \'{e} porque ainda n\~{a}o chegou ao fim.''}
+\\
+\textbf{Fernando Sabino}
+\end{flushright}
+
+\newpage\ \thispagestyle{empty} \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RESUMO E ABSTRACT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\thispagestyle{empty}
+\noindent
+\begin{center}\textbf{\huge{Resumo}}\end{center} 
+\vspace*{+60pt}
+\begin{singlespace}
+TAL, F. \textit{titulo}. 2016. xxxp. TCC UNESP 2016.
+\end{singlespace}
+\vspace*{+20pt}
+Atualmente, ....
+\\
+\\
+Palavras-chave: Processamento de sinais. Reconhecimento de locutor. Ac\'{u}stica. Escala \textit{Bark}.
+
+\newpage\ \thispagestyle{empty} \newpage
+
+\newpage
+\thispagestyle{empty}
+\noindent
+\begin{center}\textbf{\huge{Abstract}}\end{center} 
+\vspace*{+60pt}
+\begin{singlespace}
+TAL, F. \textit{titulo}. 2016. xxxp. TCC UNESP 2016.
+\end{singlespace}
+\vspace*{+20pt}
+Nowadays, ...
+\\
+\\
+Keywords: Signal processing. Speaker recognition. Acoustics. Bark scale.
+
+\newpage\ \thispagestyle{empty} \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INDICES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\pagestyle{empty}
+\renewcommand
+\listfigurename{\hspace*{+120pt} Lista de Figuras \thispagestyle{empty}}
+\pagestyle{empty}
+\listoffigures
+%\pagestyle{empty}
+\newpage\ \thispagestyle{empty} \newpage
+%\pagestyle{empty}
+\renewcommand
+\listtablename{\hspace*{+120pt} Lista de Tabelas \thispagestyle{empty}}
+%\pagestyle{empty}
+\listoftables
+%\pagestyle{empty}
+
+\newpage\ \thispagestyle{empty} \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LISTA DE ABREVIACOES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\thispagestyle{empty}
+\vspace*{+62pt}
+\begin{center}{\huge \textbf{Lista de Abreviaturas}}\end{center}
+\vspace*{+20pt}
+\begin{tabular}{l l}
+\textbf{ABFF}&Academia Brasileira de Fonoaudiologia Forense
+\\
+\textbf{CHMM}&\textit{Continuous Hidden Markov Models}
+\\
+\textbf{DTW}&\textit{Dynamic Time Warping}
+\\
+\textbf{DWT}&\textit{Discrete Wavelet Transform}
+\\
+\textbf{EER}&\textit{Equal Error Rate}
+\\
+\textbf{FIR}&\textit{Finite Impulse Response}
+\\
+\textbf{GMM-UBM}&\textit{Gaussian Mixture Models-Universal Backgound Models}
+\\
+\textbf{HMM}&\textit{Hidden Markov Model}
+\\
+\textbf{IEEE}&\textit{Institute of Electrical and Eletronic Engineers}
+\\
+\textbf{IIR}&\textit{Infinite Impulse Response}
+\\
+\textbf{LPCC}&\textit{Linear Predictive Cepstrum Coefficients}
+\\
+\textbf{MFCC}&\textit{Mel Frequency Cepstral Coefficients}
+\\
+\textbf{MLP}&\textit{Multiple Layer Perceptron}
+\\
+\textbf{NIST}&\textit{National Institute of Standards and Technology}
+\\
+\textbf{PCM}&\textit{Pulse Code Modulation}
+\\
+\textbf{RNA}&Rede Neural Artificial
+\\
+\textbf{SVM}&\textit{Support Vector Machine}
+\\
+\textbf{TIMIT}&\textit{Texas Instruments and Massachusetts}
+\\
+\textbf{TTVNN}&\textit{Transi\c{c}\~{a}o entre Trechos Vozeados e N\~{a}o-Vozeados}
+\\
+\textbf{VQ}&\textit{Vector Quantization}
+\\
+\textbf{WAVE}&\textit{Waveform}
+\\
+\textbf{WPT}&\textit{Wavelet Packet Transform}
+\\
+\textbf{ZCR}&\textit{Zero Crossing Rate}
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SUMARIO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage\ \thispagestyle{empty} \newpage
+%\pagestyle{empty}
+\renewcommand
+\contentsname{\hspace*{+160pt} Sum\'{a}rio \thispagestyle{empty}}
+%\pagestyle{empty}
+\tableofcontents
+%\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CAPITULO 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setboolean{@twoside}{true}
+\chapter{Introdu\c{c}\~{a}o}
+\thispagestyle{myheadings}
+\pagestyle{myheadings}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECAO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Considera\c{c}\~{o}es iniciais}
+\label{cap1}
+\par Petry \cite{PETRY2002} define o reconhecimento de locutores como...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECAO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objetivos}
+\par Este trabalho tem como objetivo implementar um algoritmo computacional desenvolvido em C para reconhecer comandos falados dependente do locutor.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECAO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Metodologia}
+\par Para a elabora\c{c}\~{a}o deste projeto foi determinado os seguintes 11 comandos:
+\begin{itemize}
+	\item{}Bom dia, Logan;
+	\item{}Bom noite, Logan;
+	\item{}Oi, Logan;
+	\item{}Como est\'{a} o tempo hoje?;
+	\item{}vai chover?;
+	\item{}Abrir calculadora;
+	\item{}Ver not\'{i}cias;
+	\item{}Pesquisar;
+	\item{}Alarme;
+	\item{}Calend\'{a}rio;
+	\item{}Sair;	
+\end{itemize}sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para cada um dos 11 comandos referidos, totalizando 110 arquivos de \'{a}udio no formato \textit{wave}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECAO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Organiza\c{c}\~{a}o do trabalho}
+\par O texto vindouro do presente trabalho est\'{a} organizado da seguinte forma:
+\begin{itemize}
+\item{}No Cap\'{i}tulo \ref{cap2} apresenta-se uma s\'{e}rie de trabalhados publicados envolvendo a \'{a}rea de reconhecimento de locutores, mostrando como s\~{a}o in\'{u}meras as possibilidades de se realizar essa tarefa. Exp\~{o}e-se, tamb\'{e}m, os principais conceitos e teorias que est\~{a}o relacionados com o trabalho que foi desenvolvido.
+\item{}No Cap\'{i}tulo \ref{cap3} apresenta-se, com detalhes, todo o desenvolvimento do trabalho proposto e de que forma os conceitos discutidos no cap\'{i}tulo anterior foram utilizados.
+\item{}No Cap\'{i}tulo \ref{cap4} relatam-se todos os resultados obtidos no trabalho, a partir dos testes de reconhecimento que foram realizados.
+\item{}No Cap\'{i}tulo \ref{cap5} apresentam-se as conclus\~{o}es sobre o trabalho, bem como propostas para pesquisas futuras.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CAPITULO 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Revis\~{a}o Bibliogr\'{a}fica}
+\label{cap2}
+\thispagestyle{myheadings}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECAO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fundamenta\c{c}\~{a}o da Verifica\c{c}\~{a}o de Locutores}
+\label{secao_reconhecimento}
+\par Reconhecimento de locutores \cite{BEIGI2011}...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECAO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Arquivos Ac\'{u}sticos no Formato \textit{WAVE}}
+\label{secao_formato wave}
+\par O formato...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECAO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Energia}
+\label{energia}
+\par A energia...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECAO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Vetores de Caracter\'{i}sticas}
+\label{vetores de caracterisctica}
+\par Vetor de caracter\'{i}stica...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECAO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{N\'{i}veis Cr\'{i}ticos de Energia}
+\label{niveis criticos de energia}
+\par Niveis de energia sao...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CAPITULO 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Detalhamento do Trabalho Proposto}
+\label{cap3}
+\thispagestyle{myheadings}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECAO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace*{-0.3cm}
+\section{Considera\c{c}\~{o}es iniciais}
+\par Como primeira etapa para ....
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CAPITULO 4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Testes e Resultados}
+\label{cap4}
+\thispagestyle{myheadings}
+bla bla bla...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CAPITULO 5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Conclus\~{o}es e Trabalhos Futuros}
+\label{cap5}
+\thispagestyle{myheadings}
+\par Neste trabalho, ...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCIAS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand
+\bibname{\centering{Refer\^{e}ncias}}
+\addcontentsline{toc}{chapter}{Refer\^{e}ncias}
+\begin{thebibliography}{00}
+\thispagestyle{myheadings}
+\bibliographystyle{abnt-num}
+\bibitem{PETRY2002}\begin{singlespace}PETRY, A. \textit{Reconhecimento autom\'{a}tico de locutor utilizando medidas de invariantes din\^{a}micas n\~{a}o-lineares}. 2002. 155 p. Tese (Doutorado em Ci\^{e}ncia da Computa\c{c}\~{a}o)-Instituto de Inform\'{a}tica, Universidade Federal do Rio Grande do Sul, Porto Alegre, 2002.\end{singlespace}
+\bibitem{forensic_speaker_recognition}\begin{singlespace}CAMPBELL, J. P. et al. Forensic speaker recognition: a need for caution. \textit{IEEE Signal Processing Magazine}, v. 26, n. 2, p. 95-103, 2009. doi:10.1109/msp.2008.931100.\end{singlespace}
+\bibitem{abff}\begin{singlespace}ACADEFORD. Dispon\'{i}vel em:$<$http://www.acadeffor.com.br/$>$. Acesso em: 12 ago. 2014.\end{singlespace}
+\begin{singlespace}
+num\'{e}rico. S\~{a}o Paulo: Pearson Prentice Hall, 2007.\end{singlespace}
+\end{thebibliography}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APENDICE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{myheadings}
+\newpage\ \thispagestyle{myheadings} \newpage
+\thispagestyle{myheadings}
+
+\appendix
+
+\renewcommand{\chaptername}{Ap\^{e}ndice I - Gr\'{a}ficos das caracter\'{i}sticas extra\'{i}das}
+
+\addcontentsline{toc}{chapter}{Ap\^{e}ndice I - Gr\'{a}ficos das caracter\'{i}sticas extra\'{i}das}
+
+\noindent
+
+{\huge \vspace*{+79pt} \textbf{Ap\^{e}ndice I - Gr\'{a}ficos das caracter\'{i}sticas}}
+{\huge \hspace*{+11pt} \textbf{extra\'{i}das}}
+
+\end{document}
