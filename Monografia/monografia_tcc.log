@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.4.19)  9 MAY 2017 12:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.4.19)  17 MAY 2017 20:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1158,33 +1158,39 @@ Overfull \hbox (4.3807pt too wide) in paragraph at lines 84--102
 [][] 
  []
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 124--130
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 121--127
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--134
+Underfull \hbox (badness 10000) in paragraph at lines 128--131
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--134
+Underfull \hbox (badness 10000) in paragraph at lines 128--131
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--140
+Underfull \hbox (badness 10000) in paragraph at lines 132--137
 
  []
 
-[3] [4] [5] [6] [7] [8] [9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 212--216
+[3] [4] [5] [6] [7]
+Missing character: There is no Ã in font txr!
+Missing character: There is no § in font txr!
+ [8] [9] [10] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 211--215
 
  []
 
 [12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 228--232
+Underfull \hbox (badness 10000) in paragraph at lines 227--231
 
  []
 
@@ -1203,54 +1209,77 @@ Underfull \hbox (badness 10000) in paragraph at lines 228--232
 
  [22]
 Cap\'{\i }tulo 1.
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 353.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23
+
+]
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 365.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 353.
- [23
-
-] [24] [25]
-[26
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 365.
+Missing character: There is no Ã in font txr!
+Missing character: There is no § in font txr!
+Missing character: There is no Ã in font txr!
+Missing character: There is no Ã in font txr!
+Missing character: There is no Ã in font txr!
+Missing character: There is no § in font txr!
+Missing character: There is no Ã in font txr!
+Missing character: There is no Ã in font txr!
+Missing character: There is no ­ in font txr!
+Missing character: There is no Ã in font txr!
+Missing character: There is no § in font txr!
+Missing character: There is no Ã in font txr!
+Missing character: There is no Ã in font txr!
+Missing character: There is no § in font txr!
+ [24] [25] [26
 
 ]
 Cap\'{\i }tulo 2.
 
-LaTeX Warning: Citation `BEIGI2011' on page 27 undefined on input line 389.
+LaTeX Warning: Citation `BEIGI2011' on page 27 undefined on input line 406.
 
 
+Overfull \hbox (112.01988pt too wide) in paragraph at lines 422--443
+ [][] 
+ []
+
+[27]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27]
-[28]
-Cap\'{\i }tulo 3.
-[29
-
-] [30
+ [28]
+[29] [30
 
 ]
-Cap\'{\i }tulo 4.
+Cap\'{\i }tulo 3.
 [31] [32
 
 ]
-Cap\'{\i }tulo 5.
+Cap\'{\i }tulo 4.
 [33] [34
 
-] [35] [36] [37] (./monografia_tcc.aux)
+]
+Cap\'{\i }tulo 5.
+[35] [36
+
+] [37] [38] [39] (./monografia_tcc.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 26630 strings out of 494925
- 635108 string characters out of 6180251
- 790211 words of memory out of 5000000
- 29376 multiletter control sequences out of 15000+600000
- 49225 words of font info for 119 fonts, out of 8000000 for 9000
+ 26638 strings out of 494925
+ 635199 string characters out of 6180251
+ 794211 words of memory out of 5000000
+ 29380 multiletter control sequences out of 15000+600000
+ 52538 words of font info for 124 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 62i,22n,96p,732b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,22n,96p,755b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type
@@ -1259,10 +1288,10 @@ onts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmri8a.pfb>
-Output written on monografia_tcc.pdf (37 pages, 75432 bytes).
+Output written on monografia_tcc.pdf (39 pages, 80737 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
+ 168 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
