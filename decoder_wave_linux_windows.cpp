@@ -5,19 +5,22 @@
 #include <fstream>
 using std::cout; using std::endl; using std::string; using std::ofstream;
 //---------------------------------------
-int main(int i,char* n[])
-{
+int main(int i,char* n[]){
 
   string file_path_parameter = n[1];
-  int position_parameter_name, size_path_parameter, real_size;
+  string name_parameter;
+  int position_parameter_name;
+  int size_path_parameter;
+  int real_size;
+
 
   size_path_parameter = file_path_parameter.size();
   position_parameter_name = file_path_parameter.find("/",0);
   real_size = size_path_parameter - 5;
-  string name_parameter = file_path_parameter.substr(position_parameter_name+1, real_size-position_parameter_name);
-
+  name_parameter = file_path_parameter.substr(position_parameter_name+1, real_size-position_parameter_name);
+  /*
   cout<<"caminho do parametro: "<<file_path_parameter<<endl;
-  cout<<"nome do audio: "<<name_parameter<<endl;
+  cout<<"nome do audio: "<<name_parameter<<endl;*/
 
 void analisa_dados_brutos(double*,int, string name_parameter[]);
 //void cria_arquivos(string name_parameter[]);                                        //criar os arquivos .txt parar guardar as amostragem dos audios
@@ -171,8 +174,8 @@ else
 std::cout<<"\n\n\n";
 }
 //--------------------------------------------------------
-short converte2de8para1de16(unsigned char lsb, unsigned char msb)
-{
+short converte2de8para1de16(unsigned char lsb, unsigned char msb){
+
 return(((msb&0x80)>>7)*(32768) +
        ((msb&0x40)>>6)*(16384) +
        ((msb&0x20)>>5)*(8192) +
@@ -190,13 +193,23 @@ return(((msb&0x80)>>7)*(32768) +
        ((lsb&0x02)>>1)*(2) +
        (lsb&0x01));
 }
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+double energy(double * input_vector, int length){// function energy
+      double e = 0;
+      for(int i = 0; i < length; i++)
+          e += pow(input_vector[i],2);
+      return(e);
+}
+
 //---------------------------------------------------------------------------------------------------------------------------------------------------
-void analisa_dados_brutos(double * s, int m, string *name_parameter) //sinal e seu tamanho
-{
+
+void analisa_dados_brutos(double * s, int m, string *name_parameter) {//sinal e seu tamanho
 
 int index;
-string name = *name_parameter;
-name = "Banco_de_amostras/"+name;
+string name = "Banco_de_amostras/"+(*name_parameter);
+//name = "Banco_de_amostras/"+name;
 
   ofstream file (name);//abre o arquivo .txt para gravação da amostragem da música
   if(file.is_open()){
@@ -204,64 +217,56 @@ name = "Banco_de_amostras/"+name;
     for (index = 1; index<= m; index++){
       //plotar os dados nos arquivos
       file<<"valor:"<<s[index]<<endl;
+
+
+      int L = 0; // partial lengths
+      double C = 0.1; // the desired value, being 0<C<100
+      int T = ((100/C) - ((int)(100/C)) == 0) ? (100/C)-1 : (int)(100/C); // the number of elements in T
+      double *f = new double[T]; // dynamic vector declaration
+      double z = energy(&s[0], m)*((double)(C)/100);
+      for(int k = 0; k<T; k++){
+        while(energy(&s[0], L) < ((k+1)*z))
+        L++;
+        f[k] = (double)(L)/(double)(m);
+      }
+
     }
     file.close();
   }
   else{
-    cout<<"falha ao abrir o arquivo"<<endl;
+    cout<<"falha ao abrir o arquivo na pasta Banco_de_amostras"<<endl;
   }
 
 }
+
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-void cria_arquivos(string *name_parameter){}
-
-  /*
-cout<<*name_parameter<<endl;
-
-
-  FILE *write_file, *read_file;
-  int count_cmd = 0, length_line = 0;
-  char end_file;
-  char cmd[100][30]; //matriz tem tamanho fixo, tentar arrumar para tamanho dinamico
-  char  line_file[30];
-  read_file = fopen("Banco_de_comandos", "r");
-
-  if(read_file == NULL)
-    puts("\nimpossivel abrir o arquivo de comandos\n");
-  while(fgets(line_file, sizeof(line_file), read_file) != NULL){
-    //como armazenar o tamanho da linha do texto exato na matriz de string cmd?
-    /*length_line = line_file.size();
-    cmd[count_cmd][length_line] = line_file;
-    count_cmd++;
-
-    cout<<line_file<<endl;
-    count_cmd++;
+//ALGORITMO 5 - MÉTODO A3 ================================================
+/*
+// … ensure that s[.], of length M, is available as input
+int L = 0; // partial lengths
+double C = (10/100); // the desired value, being 0<C<100
+int T = ((100/C) - ((int)(100/C)) == 0) ? (100/C)-1 : (int)(100/C); // the number of elements in T
+double *f = new double =[T]; // dynamic vector declaration
+double z = energy(&s[0], M)*((double)(C)/100);
+for(int k = 0; k<T; k++){
+  while(energy(&s[0], L) < ((k+1)*z))
+  L++;
+  f[k] = (double)(L)/(double)(M);
   }
-  fclose(read_file);
-  while(count_cmd >= 0){
-    write_file = fopen("dados_brutos_"+cmd[count_cmd][sizeof(line_file)]+".txt", "w+");//arrumar concatenação de strings
-    if(write_file == NULL)
-      puts("impossivel criar arquivo\n");
-    count_cmd--;
-  }
-  for(int i = 0; i<m; i++){
-    fprintf(write_file, "ponto %i: %f\n", i+1, s[i]);
-  }
- // fclose(write_file);
-
-
-
-
-
-string cmd_line;
-ifstream read_file ("Banco_de_comandos.txt");
- std::cout <<"----------------------  COMANDOS ------------------------------"<<endl;
-if(read_file.is_open()){
-    while(getline (read_file,cmd_line)){
-         std::cout<<cmd_line<<endl;
-      }
-read_file.close();
+// at this point, the feature vector, f [.], is ready
+// function energy
+double energy(double * input_vector, int length){
+  double e = 0;
+  for(int i = 0; i < length; i++)
+  e += pow(input_vector[i],2);
+  return(e);
 }
-else  std::cout<<"impossível abrir o arquivo :O";
-  */
+// FIM ALGORITMO 5 - MÉTODO A3 ==============================================
+
+
+
+*/
+
+
+

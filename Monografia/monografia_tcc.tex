@@ -172,9 +172,11 @@
 \thispagestyle{empty}
 \begin{center}{\LARGE \textbf{Agradecimentos}}\end{center}
 \vspace{+60pt}
-Primeiramente gostaria de agradecer a meus pais e minha madrinha, pois sem o apoio deles, eu n\~{a}o conseguiria entrar nessa linda universidade.\newline
-Agrade\c{c}o todos os meus familiares que me apoiaram ao longo de toda a minha jornada na faculdade, e principalmente a minha irm\~{a}, que nos momentos mais dif\'{i}ceis me apoiou a dar continuidade ao curso.\newline
-Gostaria de agradecer tamb\'{e}m minha namorada por ter me auxiliado nesses dois \'{u}ltimos anos de universidade e por me dar forças a a concluir o curso nessa etapa final.
+\par Primeiramente, gostaria de agradecer meus pais e minha madrinha, pois sem o apoio deles eu nunca teria conseguido ter acesso a um ensino de qualidade que o cursinho alternativo me proporcionou durante todo o ano de 2012. Foi gra{\c c}as a essas 3 pessoas que pude ingressar nessa linda universidade.
+
+\par Gostaria de agradecer tamb\'{e}m a minha irm\~{a} que nos momentos mais dif\'{i}cies da minha gradua{\c c}\~{a}o me deu for{\c c}as para continuar em frente e concluir minha forma{\c c}\~{a}o de bacharel em ci\^{e}ncia da computa{\c c}\~{a}o. Agrade{\c c}o tamb\'{e}m a todos os meus familiares que me apoiaram ao longos dessa jornada de 5 anos.
+
+\par E tamb\'{e}m deixo um agradecimento especial a meus dois grandes amigos Jo\~{a}o Cesar Granville e Luiz Gustavo Caobianco que tornaram esses anos na universidade mais felizes. Agrade{\c c}o tamb\'{e}m minha namorada por ter me auxilidado nesses dois \'{u}ltimos anos de universidade e por me dar for{\c c}as a concluir o curso nessa etapa final.
 
 \newpage\ \thispagestyle{empty} \newpage
 
@@ -265,49 +267,18 @@ Keywords: Signal processing. Speaker recognition. Acoustics. Bark scale.
 \begin{tabular}{l l}
 \textbf{ABFF}&Academia Brasileira de Fonoaudiologia Forense
 \\
-\textbf{CHMM}&\textit{Continuous Hidden Markov Models}
+\textbf{WAVE}&\textit{Waveform Audio File Format}
 \\
-\textbf{DTW}&\textit{Dynamic Time Warping}
+\textbf{PCM}&\textit{Pulse-Code Modulation}
 \\
-\textbf{DWT}&\textit{Discrete Wavelet Transform}
+\textbf{IBM}&\textit{International Business Machines}
 \\
-\textbf{EER}&\textit{Equal Error Rate}
+\textbf{RIFF}&\textit{Resource Interchange File Format}
 \\
-\textbf{FIR}&\textit{Finite Impulse Response}
-\\
-\textbf{GMM-UBM}&\textit{Gaussian Mixture Models-Universal Backgound Models}
-\\
-\textbf{HMM}&\textit{Hidden Markov Model}
+\textbf{fmt}&\textit{format}
 \\
 \textbf{IEEE}&\textit{Institute of Electrical and Eletronic Engineers}
-\\
-\textbf{IIR}&\textit{Infinite Impulse Response}
-\\
-\textbf{LPCC}&\textit{Linear Predictive Cepstrum Coefficients}
-\\
-\textbf{MFCC}&\textit{Mel Frequency Cepstral Coefficients}
-\\
-\textbf{MLP}&\textit{Multiple Layer Perceptron}
-\\
-\textbf{NIST}&\textit{National Institute of Standards and Technology}
-\\
-\textbf{PCM}&\textit{Pulse Code Modulation}
-\\
-\textbf{RNA}&Rede Neural Artificial
-\\
-\textbf{SVM}&\textit{Support Vector Machine}
-\\
-\textbf{TIMIT}&\textit{Texas Instruments and Massachusetts}
-\\
-\textbf{TTVNN}&\textit{Transi\c{c}\~{a}o entre Trechos Vozeados e N\~{a}o-Vozeados}
-\\
-\textbf{VQ}&\textit{Vector Quantization}
-\\
-\textbf{WAVE}&\textit{Waveform}
-\\
-\textbf{WPT}&\textit{Wavelet Packet Transform}
-\\
-\textbf{ZCR}&\textit{Zero Crossing Rate}
+
 \end{tabular}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -342,19 +313,20 @@ Keywords: Signal processing. Speaker recognition. Acoustics. Bark scale.
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Objetivo}
-\par Este trabalho tem como objetivo implementar um algoritmo computacional desenvolvido em C/C++ para reconhecer comandos falados de modo \textit{off-line} com locutor pr\'{e}definido.
+\par Este trabalho tem como objetivo implementar um algoritmo computacional desenvolvido em C/C++ para reconhecer comandos falados de modo \textit{off-line} com locutor pr\'{e}definido, ou seja \textit{speaker-dependent}. Esses comandos foram previamente gravados em arquivos no formato \textit{WAVE} de 16 \textit{bits} PCM.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{justificativa}
-\par justificativa...
+\par justificar e oferecer razao suficiente para a construcao desse trabalho. Responde a pergunta do que pq fazer o trabalho, procurando os antecedentes do problema e a relevancia do assunto, argumentando sobre sua importancia pratico/teorica, colocando as possiveis contribuicoes esperadas
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Motiva\c{c}\~{a}o}
-\par 
+\par Motivação é a introdução, ou seja é a apresentação rápida do assunto abordado e seu mérito. É uma seção na qual se aguça a curiosidade do leitor, na qual se tenta vender-lhe o projeto. Éadequado terminar com a formulação do problema, sob a forma de pergunta.
+Problematização é a transformação de uma necessidade humana em problema.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % SECAO
@@ -374,8 +346,8 @@ Keywords: Signal processing. Speaker recognition. Acoustics. Bark scale.
 	\item{}Calend\'{a}rio;
 	\item{}Sair;	
 \end{itemize}
-sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para cada um dos 11 comandos referidos, totalizando 110 arquivos de \'{a}udio no formato MPEG-4.Tais arquivos foram convertidos para o formato textit{wave} usando o programa \textit{Audacity}. Vale ressaltar que todos os \'{a}udios foram gravados em um ambiente que proporciona-se um certo grau de isolamento sonoro, para assim se obter um som com menos ru\'{i}do.
-\par A partir dessa etapa inicial foi feita a extração dos dados brutos contidos nos arquivos \textit{wave}. Para isso foi utilizada uma biblioteca fornecida pelo Prof.Dr.Rodrigo Capobianco Guido do Departamento de Ciência da Computação e Estatística (DCCE), IBILCE/Unesp. Essa biblioteca tem a função de separar o cabeçalho dos arquivos \textit{wave}. A partir desse ponto, a biblioteca foi modificada para extrair os dados brutos dos arquivos e guarda-los em arquivos de texto.
+sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para cada um dos 11 comandos referidos, totalizando 110 arquivos de \'{a}udio no formato MPEG-4.Tais arquivos foram convertidos para o formato \textit{WAVE} de 16 \textit{bits} PCM usando o programa \textit{Audacity}. Vale ressaltar que todos os \'{a}udios foram gravados em um ambiente que proporciona-se um certo grau de isolamento sonoro, para assim se obter um som com menos ru\'{i}do.
+\par A partir dessa etapa inicial foi feita a extra\c{c}\~{a}o dos dados brutos contidos nos arquivos \textit{WAVE}. Para isso foi utilizada uma biblioteca fornecida pelo Prof.Dr.Rodrigo Capobianco Guido do Departamento de Ci\^{e}ncia da Comput{\c c}\~{a}o e Estat\'{i}stica (DCCE), IBILCE/Unesp. Essa biblioteca, escrita em C/C++, tem a fun\c{c}\~{a}o de separar o cabe{\c c}alho dos arquivos \textit{WAVE}. A partir desse ponto, a biblioteca foi modificada para extrair os dados brutos e guardar as amplitudes dos sinais em arquivos de texto. Todos esse processo de extra{\c c}\~{a}o dos valores das amplitudes de sinais dos \'{a}udios foi automatizado com a implementa{\c c}\~{a}o de \textit{scripts} escritos na linguagem \textit{Shell script}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -386,9 +358,14 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Organiza\c{c}\~{a}o do trabalho}
-\par O texto vindouro do presente trabalho est\'{a} organizado da seguinte forma:
+\par A monografia est\'{a} organizada a partir deste cap\'{i}tulo da seguinte forma:
+
 \begin{itemize}
 \item{}No Cap\'{i}tulo \ref{cap2} apresenta-se uma s\'{e}rie de trabalhados publicados envolvendo a \'{a}rea de reconhecimento de locutores, mostrando como s\~{a}o in\'{u}meras as possibilidades de se realizar essa tarefa. Exp\~{o}e-se, tamb\'{e}m, os principais conceitos e teorias que est\~{a}o relacionados com o trabalho que foi desenvolvido.
+\end{itemize}
+
+\begin{itemize}
+	\item{}No Cap\'{i}tulo \ref{cap3} apresenta-se uma breve descri{\c c}\~{a}o do estado do atual do trabalho e tamb\'{e}m um cronograma para finaliza{\c c}\~{a}o.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -409,18 +386,22 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Arquivos Ac\'{u}sticos no Formato \textit{WAVE}}
 \label{secao_formato wave}
-\par\textit{waveform audio file format} \'{e} a abrevia\c{c}\~{a}o de \textit{WAVE} ou simplesmente \textit{WAV}, que \'{e} um tipo de formato de arquivo de \'{a}udio que foi desenvolvido pela \textit{Microsoft} em conjunto com a IBM. O formato \textit{WAVE} \'{e} amplamente utilizado em uma variedade de trabalhos, sejam eles cient\'{i}ficos ou profissionais, visto que o formato permite uma fiel representa\c{c}\~{a}o dos dados digitalizados, uma vez que os dados digitalizados podem ser armazenados sem sofrer obrigatoriamente um processo de compress\~{a}o, o que evita perdas. Por\'{e}m, devido a essa caracter\'{i}stica o \textit{WAV} ocupa muito mais espa\c{c}o que os demais formatos de arquivos de \'{a}udios. 
 
-\par A Tabela 2.1 mostra a estrutura de um arquivo \textit{WAVE}. Basicamente o arquivo \'{e} divido em 3 grandes blocos, sendo o primeiro bloco 
-\par Nesse trabalho foi utilizado o formato \textit{WAV} de 16 bits PCM (\textit{Pulse-code Modulation}) que n\~{a}o utiliza compress\~{a}, para se obter assim uma melhor qualidade na elabora\c{c}\~{a}o deste projeto final.
+\par\textit{Waveform audio file format} \'{e} a abrevia\c{c}\~{a}o de \textit{WAVE} ou simplesmente \textit{WAV}, que \'{e} um tipo de formato de arquivo de \'{a}udio que foi desenvolvido pela \textit{Microsoft} em conjunto com a IBM. O formato \textit{WAVE} \'{e} amplamente utilizado em uma variedade de trabalhos, sejam eles cient\'{i}ficos ou profissionais, visto que o formato permite uma fiel representa\c{c}\~{a}o dos dados digitalizados, uma vez que os dados digitalizados podem ser armazenados sem sofrer obrigatoriamente um processo de compress\~{a}o, o que evita perdas. Por\'{e}m, devido a essa caracter\'{i}stica o \textit{WAV} ocupa muito mais espa\c{c}o que os demais formatos de arquivos de \'{a}udios. 
 
-\vspace*{+50pt}
+\par A Tabela 2.1 mostra a estrutura de um arquivo \textit{WAVE}. Basicamente o arquivo \'{e} divido em 2 grandes blocos, sendo o primeiro bloco um cabe{\c c}alho RIFF e o segundo bloco \'{e} divido em dois sub-blocos, sendo um com informa{\c c}\~{o}es referentes ao formato \textit{WAVE} e o outro com os dados do \'{a}udios.
+
+\par Vale ressaltar que os valores mais comuns para cada amostra de um  arquivo \textit{WAVE} pode ser 8 \textit{bits} ou 16 \textit{bits}. Um \'{a}udio de 8 \textit{bits} siginifica que o valor da amplitude do sinal, de cada amostra, pode ser representado por 256 valores, sendo 127 positivos e 128 negativos. J\'{a} para um arquivo 16 \textit{bits} a amplitude do sinal pode ser representado por 65536 valores, com 32757 positivos e 32768 negativos. Para \textit{WAVE} de 16 \textit{bits} \'{e} utilizada a codifica{\c c}\~{a}o de complemento de 2 para representar o valor da amplitude do sinal. Assim, o valor do \textit{bit} mais significativo representa se o sinal \'{e} negaivo ou positivo.
+
+\par Nesse trabalho foi utilizado o formato \textit{WAV} de 16 \textit{bits} PCM (\textit{Pulse-code Modulation}) que n\~{a}o utiliza compress\~{a}o, para se obter assim uma melhor qualidade na elabora\c{c}\~{a}o deste projeto final. Foi fornecida uma biblioteca escrita em C/C++ pelo orientador para isolar o primeiro bloco referente ao cabe{\c c}alho RIFF e o sub-bloco de formato \textit{WAV} dos dados brutos, que cont\'{e}m as amplitudes dos sinais de voz digitalizados.
+
+\vspace*{+10pt}
 
 \begin{table}[h] 
-	\centering
+
 	\caption{Estrutura de um arquivo \textit{WAVE}}
 	\begin{tabular}{c|c|c|c}
-		\textbf{Classe} & \textbf{Posi\c{c}\~{a}o (bytes)} & \textbf{Tamanho (bytes)} & \textbf{Descri\c{c}\~{a}o}\\
+		\textbf{Classe} & \textbf{Posi\c{c}\~{a}o \textit{(bytes)}} & \textbf{Tamanho \textit{(bytes)}} & \textbf{Descri\c{c}\~{a}o}\\
 		\hline
 		Cabe\c{c}alho & 0 & 4 & Apresenta o identificador do cabe\c{c}alho - "RIFF".\\
 		Cabe\c{c}alho & 4 & 4 & Tamanho do arquivo sem o identificado do cabe\c{c}alho.\\
@@ -428,12 +409,12 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 		\hline
 		Formato & 12 & 4 & Mostra o identificador do segundo bloco - "fmt".\\
 		Formato & 16 & 4 & Tamanho do bloco sem o identificador.\\
-		Formato & 20 & 2 & Mostra se o arquivo \'{e} do tipo PCM ou tem alguma compress\~{a}o.\\
+		Formato & 20 & 2 & Mostra se o arquivo \'{e} do tipo PCM ou se tem alguma \\ & & & compress\~{a}o.\\
 		Formato & 22 & 2 & Mostra a quantidade de canais.\\
 		Formato & 26 & 4 & Apresenta o valor da taxa de amostragem.\\
-		Formato & 30 & 4 & Apresenta a taxa de bytes.\\
-		Formato & 32 & 2 & Demostra a quantidade de bytes para uma amostra.\\
-		Formato & 34 & 2 & Demostra a quantidade de bits para cada amostra.\\
+		Formato & 30 & 4 & Apresenta a taxa de \textit{bytes}.\\
+		Formato & 32 & 2 & Demostra a quantidade de \textit{bytes} para uma amostra.\\
+		Formato & 34 & 2 & Demostra a quantidade de \textit{bits} para cada amostra.\\
 		\hline
 		Dados & 36 & 4 & Apresenta o identificador do terceiro bloco - "\textit{data}".\\
 		Dados & 40 & 4 & Mostra o tamanho do bloco sem o identificador.\\
