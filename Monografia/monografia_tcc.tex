@@ -265,8 +265,6 @@ Keywords: Signal processing. Speaker recognition. Acoustics. Bark scale.
 \begin{center}{\huge \textbf{Lista de Abreviaturas}}\end{center}
 \vspace*{+20pt}
 \begin{tabular}{l l}
-\textbf{ABFF}&Academia Brasileira de Fonoaudiologia Forense
-\\
 \textbf{WAVE}&\textit{Waveform Audio File Format}
 \\
 \textbf{PCM}&\textit{Pulse-Code Modulation}
@@ -325,8 +323,10 @@ Keywords: Signal processing. Speaker recognition. Acoustics. Bark scale.
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Motiva\c{c}\~{a}o}
-\par Motivação é a introdução, ou seja é a apresentação rápida do assunto abordado e seu mérito. É uma seção na qual se aguça a curiosidade do leitor, na qual se tenta vender-lhe o projeto. Éadequado terminar com a formulação do problema, sob a forma de pergunta.
-Problematização é a transformação de uma necessidade humana em problema.
+\par Em 2008, \'{e} lan{\c c}ado o primeiro filme do Homem de Ferro, centrado no personagem Tony Stark. O filme al\'{e}m de despertar o interesse nas hist\'{o}rias em quadrinhos da Marvel, tamb\'{e}m prende a aten{\c c}\~{a}o dos ci\^{e}ntistas da computa{\c c}\~{a}o, uma vez que o personagem principal interage com uma intelig\^{e}ncia artificial - Jarvis - que podia controlar a casa e a armadura do h\'{e}roi. J\'{a} no ano de 2011, foi lan{\c c}ado a primeira vers\'{a}o do assistente pessoal do iOS, conhecido como Siri, que permite que o usu\'{a}rio execute determinadas fun{\c c}\~{o}es do \textit{smartphone} utilizando comandos falados. E mais recente, o criador do Facebook, decidiu no ano 2016, implementar seu pr\'{o}prio assistente pessoal, para auxiliar nas tarefas dom\'{e}sticas.
+\par FALAR SOBRE ALGUM CONTEXTO CIENTIFICO TAMBEM.
+\par E \'{e} a partir desse contexto que surgiu a inspira{\c c}\~{a}o para o desenvolvimento desse trabalho. Inicialmente, o projeto tinha como proposta de conseguir auxiliar em determinadas fun{\c c}\~{o}es de uma resid\^{e}ncia, al\'{e}m de executar comandos b\'{a}sico em um computador. Por\'{e}m, o projeto necessitou de cortes em seu escopo para que se tornasse fact\'{i}vel sua elabora{\c c}\~{a}o como forma de trabalho de conclus\~{a}o de curso.
+\par Assim, este projeto tem como objetivo iniciar o desenvolvimento de um futuro assitente pessoal, atrav\'{e}s da elabora{\c c}\~{a}o de um sistema para reconhecimento de comandos falados \textit{speaker-dependent}. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % SECAO
@@ -347,7 +347,8 @@ Problematização é a transformação de uma necessidade humana em problema.
 	\item{}Sair;	
 \end{itemize}
 sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para cada um dos 11 comandos referidos, totalizando 110 arquivos de \'{a}udio no formato MPEG-4.Tais arquivos foram convertidos para o formato \textit{WAVE} de 16 \textit{bits} PCM usando o programa \textit{Audacity}. Vale ressaltar que todos os \'{a}udios foram gravados em um ambiente que proporciona-se um certo grau de isolamento sonoro, para assim se obter um som com menos ru\'{i}do.
-\par A partir dessa etapa inicial foi feita a extra\c{c}\~{a}o dos dados brutos contidos nos arquivos \textit{WAVE}. Para isso foi utilizada uma biblioteca fornecida pelo Prof.Dr.Rodrigo Capobianco Guido do Departamento de Ci\^{e}ncia da Comput{\c c}\~{a}o e Estat\'{i}stica (DCCE), IBILCE/Unesp. Essa biblioteca, escrita em C/C++, tem a fun\c{c}\~{a}o de separar o cabe{\c c}alho dos arquivos \textit{WAVE}. A partir desse ponto, a biblioteca foi modificada para extrair os dados brutos e guardar as amplitudes dos sinais em arquivos de texto. Todos esse processo de extra{\c c}\~{a}o dos valores das amplitudes de sinais dos \'{a}udios foi automatizado com a implementa{\c c}\~{a}o de \textit{scripts} escritos na linguagem \textit{Shell script}.
+\par A partir dessa etapa inicial foi feita a extra\c{c}\~{a}o dos dados brutos contidos nos arquivos \textit{WAVE}. Para isso foi utilizada uma biblioteca fornecida pelo Prof.Dr.Rodrigo Capobianco Guido do Departamento de Ci\^{e}ncia da Comput{\c c}\~{a}o e Estat\'{i}stica (DCCE), IBILCE/Unesp. Tal biblioteca, escrita em C/C++, tem a fun\c{c}\~{a}o de separar o cabe{\c c}alho dos arquivos \textit{WAVE}. A partir desse ponto, a biblioteca foi modificada para extrair os dados brutos e guardar as amplitudes dos sinais em arquivos de texto. Foi realizada a automa{\c c}\~{a}o de todo o processo que exigia interven{\c c}\~{a}o humana para a execu{\c c}\~{a}o do algoritmo, como a passagem  de \'{a}udios como par\~{a}metro a cada nova execu{\c c}\~{a}o, cria{\c c}\~{a}o de arquivos para extra{\c c}\~{a}o dos valores das amplitudes dos sinais, entre outros. Toda essa automatiza{\c c}\~{a}o foi implementada com a utiliza{\c c}\~{a}o de \textit{scripts} escritos na linguagem \textit{Shell script}.
+\par Posteriormente a etapa de extra{\c c}\~{a}o das amplitudes dos sinais digitalizados, foi realizada a extra{\c c}\~{a}o das caracter\'{i}sticas dos \'{a}udios analisados. Essa etapa consiste na utiliza{\c c}\~{a}o do m\'{e}todo A3 - descrito com maiores detalhes no \ref{cap2} - para obter assim, vetores de caracter\'{i}sticas. Tal processo \'{e} essencial no presente trabalho, pois os valores obtidos no processo de extra{\c c}\~{a}o s\~{a}o vari\'{a}veis e demasiadamente grandes, sendo que o classificador exige valores menores e com tamanho fixo.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -361,7 +362,7 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 \par A monografia est\'{a} organizada a partir deste cap\'{i}tulo da seguinte forma:
 
 \begin{itemize}
-\item{}No Cap\'{i}tulo \ref{cap2} apresenta-se uma s\'{e}rie de trabalhados publicados envolvendo a \'{a}rea de reconhecimento de locutores, mostrando como s\~{a}o in\'{u}meras as possibilidades de se realizar essa tarefa. Exp\~{o}e-se, tamb\'{e}m, os principais conceitos e teorias que est\~{a}o relacionados com o trabalho que foi desenvolvido.
+\item{}No Cap\'{i}tulo \ref{cap2} apresenta-se uma s\'{e}rie de trabalhos realizados na \'{a}rea \textit{speaker-dependent} tanto a n\'{i}vel local quanto a internacional, exaltando a relev\^{a}ncia da \'{a}rea no \^{a}mbito acad\^{e}mico. Al\'{e}m disso, \'{e} apresentado tamb\'{e}m neste cap\'{i}tulo toda a fundamenta{\c c}\~{a}o te\'{o}rica do trabalho, definindo e exemplificando os principais conceitos utilizados na elabora{\c c}\~{a}o do deste projeto.
 \end{itemize}
 
 \begin{itemize}
@@ -430,14 +431,27 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Energia}
 \label{energia}
-\par A energia...
+\par A defini{\c c}\~{a}o de energia est\'{a} relacionada ao conceito de conseguir realizar trabalho. Neste projeto, ser\'{a} considerada energia a capacidade das estruturas voc\'{a}licas e dos pulm\~{o}es de produzir um sinal ac\'{u}stico. A equa{\c c}\~{a}o 2.1 defini a energia total E(s[.]), de um dado sinal de \'{a}udio digitalizado s[.], de tamanho M.
+
+\begin{equation}
+	E(s[.])=\sum_{i = 0}^{M-1} (Si)^2
+\end{equation}
+
+\par Para realizar a captura das caracter\'{i}ticas dos \'{a}udios foi utilizado o m\'{e}todo A3, que foi desenvolvido pelo pr\'{o}prio orientador em \cite{Guido_tutorial}. Para realizar a extra{\c c}\~{a}o das caracter\'{i}sticas, tal m\'{e}todo se baseia no em determinar tamanhos ou \'{a}reas proporcionais para atingir n\'{i}veis predefinidos da energia do sinal que se encontra em an\'{a}lise. A3 \'{e} ideal para avaliar os n\'{i}veis de energia de um sinal de voz digitalizado que foi gerado por um agente.
+\par Vale ressaltar que A3 defini um n\'{i}vel cr\'{i}tico de energia que varia de 0 a 100{\%}. Em um sinal de \'{a}udio, A3 extrai um vetor de caracter\'{i}sticas dividindo o \'{a}udio em partes proporcionais ao valor definido pelo n\'{i}vel cr\'{i}tico - par\^{a}metro C - de modo que, cria uma janela de tamanho C{\%} e extrai a caracter\'{i}stica dessa faixa de valores do sinal digitalizado, conforme \'{e} mostrado na equa{\c c}\~{a}o 2.2, onde $\epsilon$ \'{e} uma caracter\'{i}stica extraida, E(W0[.]) a energia obtida do in\'{i}cio do sinal at\'{e} o ponto final da janela definido por C, E(Wk[.]) \'{e} a energia total do sinal. Tal processo \'{e} repetido at\'{e} que se atinja o montante total de energia do \'{a}udio, de modo que, defini-se assim um vetor de caracter\'{i}sticas. 
+
+\begin{equation}
+	\epsilon = (E(W0[.]) / (\sum_{k = 0}^{T-1}E(Wk[.])))
+\end{equation}  
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Vetores de Caracter\'{i}sticas}
 \label{vetores de caracterisctica}
-\par Vetor de caracter\'{i}stica...
+\par Neste trabalho, vetores de caracter\'{i}sticas s\~{a}o vetores com tamanho fixo que armazenam valores 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -459,8 +473,8 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace*{-0.3cm}
-\section{Considera\c{c}\~{o}es iniciais}
-\par Como primeira etapa para ....
+\section{Coleta e elabora{\c c}\~{a}o do banco de \'{a}udios}
+\par Inicialmente, foram definidos os 11 comandos que ser\~{a}o reconhecidos pelo sistema, conforme j\'{a} mencionado. Os comandos foram gravados 10 vezes em diferentes dias e hor\'{a}rios, para obter se assim, uma melhor veracidade e fidelidade \`{a} voz do locutor, pois o mesmo pode sofrer altera{\c c}\~{o}es significativas com base na varia{\c c}\~{a}o do seu humor ou estado f\'{i}sico. Como tamb\'{e}m j\'{a} mencionado, a grava{\c c}\~{a}o dos arquivos de \'{a}udio foi realizada em um ambiente fechado, para diminuir assim, a probabilidade de ru\'{i}dos nos sinais. Todos os arquivos foram gravados no formato MPEG-4, que \'{e} o formato dispon\'{i}vel no \textit{software} de grava{\c c}\~{a}o de \'{a}udio do \textit{Windows} 10, e posteriormente foram convertidos para o formato \textit{WAVE} de 16 \textit{bits} PCM, com o aux\'{i}lio do editor de \'{a}udio \textit{Audacity}. Ao total, foram gravados e convertidos 110 arquivos de \'{a}udio.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CAPITULO 4
@@ -495,6 +509,10 @@ bla bla bla...
 \bibitem{abff}\begin{singlespace}ACADEFORD. Dispon\'{i}vel em:$<$http://www.acadeffor.com.br/$>$. Acesso em: 12 ago. 2014.\end{singlespace}
 \begin{singlespace}
 num\'{e}rico. S\~{a}o Paulo: Pearson Prentice Hall, 2007.\end{singlespace}
+\bibitem{Guido_tutorial}
+	\begin{singlespace}
+		Rodrigo Capobianco Guido. A tutorial on signal energy and its applications.
+	\end{singlespace}
 \end{thebibliography}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.4.19)  18 MAY 2017 15:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.4.19)  22 MAY 2017 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1212,43 +1212,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [23
 
 ]
-Missing character: There is no Ã in font txr!
-Missing character: There is no § in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no © in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no § in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no © in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no § in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no ¡ in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no © in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no ‰ in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no § in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no § in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no ‰ in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no § in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no § in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no © in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no § in font txr!
-Missing character: There is no Ã in font txr!
+Underfull \vbox (badness 5231) has occurred while \output is active []
+
+ [24]
 LaTeX Font Info:    Try loading font information for OMS+txr on input line 337.
 
 
@@ -1257,61 +1223,69 @@ File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
 (Font)              Font shape `OMS/txsy/m/n' tried instead on input line 337.
- [24] [25] [26]
-Cap\'{\i }tulo 2.
+ [25]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Citation `BEIGI2011' on page 27 undefined on input line 383.
-
-[27
+ [26]
+[27] [28
 
 ]
-Overfull \hbox (61.03189pt too wide) in paragraph at lines 403--424
+Cap\'{\i }tulo 2.
+
+LaTeX Warning: Citation `BEIGI2011' on page 29 undefined on input line 384.
+
+[29]
+Overfull \hbox (61.03189pt too wide) in paragraph at lines 404--425
 [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [28]
-[29] [30
+ [30]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]
+ [31]
+[32]
 Cap\'{\i }tulo 3.
-[31] [32
+[33
+
+] [34
 
 ]
 Cap\'{\i }tulo 4.
-[33] [34
+[35] [36
 
 ]
 Cap\'{\i }tulo 5.
-[35] [36
+[37] [38
 
-] [37] [38] [39] (./monografia_tcc.aux)
+] [39] [40] [41] (./monografia_tcc.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 26641 strings out of 494925
- 635228 string characters out of 6180251
- 794211 words of memory out of 5000000
- 29381 multiletter control sequences out of 15000+600000
- 54481 words of font info for 127 fonts, out of 8000000 for 9000
+ 26648 strings out of 494925
+ 635284 string characters out of 6180251
+ 795211 words of memory out of 5000000
+ 29384 multiletter control sequences out of 15000+600000
+ 57173 words of font info for 131 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 62i,22n,96p,785b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,22n,96p,1039b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txf
-onts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/times/utmri8a.pfb>
-Output written on monografia_tcc.pdf (39 pages, 83712 bytes).
+onts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/urw/times/utmri8a.pfb>
+Output written on monografia_tcc.pdf (41 pages, 93144 bytes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
+ 178 PDF objects out of 1000 (max. 8388607)
+ 124 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
