@@ -40,7 +40,8 @@
 
 \def\baselinestretch{1.6}
 \pagestyle{myheadings}
-
+\usepackage{enumitem}
+\setlist[enumerate]{label*=\arabic*.}
 \begin{document}
 \titlespacing{\section}{0cm}{1.5cm}{1.5cm}
 \titlespacing{\subsection}{0cm}{1.5cm}{1.5cm}
@@ -306,7 +307,7 @@ Keywords: Signal processing. Speaker recognition. Acoustics. Bark scale.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introdu\c{c}\~{a}o}
 \label{cap1}
-\par Petry \cite{PETRY2002} define o reconhecimento de locutores como...
+\par asssas
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -323,7 +324,7 @@ Keywords: Signal processing. Speaker recognition. Acoustics. Bark scale.
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Motiva\c{c}\~{a}o}
-\par Em 2008, \'{e} lan{\c c}ado o primeiro filme do Homem de Ferro, centrado no personagem Tony Stark. O filme al\'{e}m de despertar o interesse nas hist\'{o}rias em quadrinhos da Marvel, tamb\'{e}m prende a aten{\c c}\~{a}o dos ci\^{e}ntistas da computa{\c c}\~{a}o, uma vez que o personagem principal interage com uma intelig\^{e}ncia artificial - Jarvis - que podia controlar a casa e a armadura do h\'{e}roi. J\'{a} no ano de 2011, foi lan{\c c}ado a primeira vers\'{a}o do assistente pessoal do iOS, conhecido como Siri, que permite que o usu\'{a}rio execute determinadas fun{\c c}\~{o}es do \textit{smartphone} utilizando comandos falados. E mais recente, o criador do Facebook, decidiu no ano 2016, implementar seu pr\'{o}prio assistente pessoal, para auxiliar nas tarefas dom\'{e}sticas.
+\par Em 2008, \'{e} lan{\c c}ado o primeiro filme do Homem de Ferro, centrado no personagem Tony Stark. O filme al\'{e}m de despertar o interesse nas hist\'{o}rias em quadrinhos da Marvel, tamb\'{e}m prende a aten{\c c}\~{a}o dos ci\^{e}ntistas da computa{\c c}\~{a}o, uma vez que o personagem principal interage com uma intelig\^{e}ncia artificial - Jarvis - que podia controlar a casa e a armadura do h\'{e}roi. Vale ressaltar que Jarvis al\'{e}m de fazer reconhecimento do locutor de modo \textit{speaker-dependent}, tamb\'{e}m realizada s\'{i}ntese de voz. J\'{a} no ano de 2011, foi lan{\c c}ado a primeira vers\'{a}o do assistente pessoal do iOS, conhecido como Siri, que permite que o usu\'{a}rio execute determinadas fun{\c c}\~{o}es do \textit{smartphone} utilizando comandos falados. E mais recente, o criador do Facebook, decidiu no ano 2016, implementar seu pr\'{o}prio assistente pessoal, que funciona tamb\'{e}m de modo dependente do locutor, para auxiliar nas tarefas dom\'{e}sticas.
 \par FALAR SOBRE ALGUM CONTEXTO CIENTIFICO TAMBEM.
 \par E \'{e} a partir desse contexto que surgiu a inspira{\c c}\~{a}o para o desenvolvimento desse trabalho. Inicialmente, o projeto tinha como proposta de conseguir auxiliar em determinadas fun{\c c}\~{o}es de uma resid\^{e}ncia, al\'{e}m de executar comandos b\'{a}sico em um computador. Por\'{e}m, o projeto necessitou de cortes em seu escopo para que se tornasse fact\'{i}vel sua elabora{\c c}\~{a}o como forma de trabalho de conclus\~{a}o de curso.
 \par Assim, este projeto tem como objetivo iniciar o desenvolvimento de um futuro assitente pessoal, atrav\'{e}s da elabora{\c c}\~{a}o de um sistema para reconhecimento de comandos falados \textit{speaker-dependent}. 
@@ -353,9 +354,8 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Exequibilidade}
-\par Exequibilidade...
+\par Para a elabora{\c c}\~{a}o desse projeto foram utilizadas ferramentas gratuitas como \textit{Sublime}, LibreOffice, TeXstudio, \textit{Audacity} e um computador pessoal. Al\'{e}m disso, foram tamb\'{e}m utilizados artigos cient\'{i}ficos de acesso gr\'{a}tis como IEEE, e os acervo disponibilizado pela biblioteca f\'{i}sica localizada no Instituto de Bioc\^{e}ncias, Letras e Ci\^{e}cias Exatas da UNESP.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Organiza\c{c}\~{a}o do trabalho}
@@ -369,7 +369,6 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 	\item{}No Cap\'{i}tulo \ref{cap3} apresenta-se uma breve descri{\c c}\~{a}o do estado do atual do trabalho e tamb\'{e}m um cronograma para finaliza{\c c}\~{a}o.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CAPITULO 2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -381,16 +380,54 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Fundamenta\c{c}\~{a}o da Verifica\c{c}\~{a}o de Locutores}
 \label{secao_reconhecimento}
-\par Reconhecimento de locutores \cite{BEIGI2011}...
+\par A voz \'{e} uma caracter\'{i}stica \'{u}nica dos seres humanos, que foi desenvolvida a partir da necessidade do homem em socializar, e assim poder se comunicar entre seus semelhantes. Em outras palavras, essa nossa caracter\'{i}stica foi adquirida atrav\'{e}s de um processo evolutivo, assim sendo n\'{a}o somos dotados de um aparelho espec\'{i}fico para fala, apenas adaptamos um conjunto de org\~{a}os da parte superior do aparelho digestivo e do respirat\'{o} rio para produ{\c c}\~{a}o de fonemas.
+
+\par De modo geral, podemos dividir o processo de s\'{i}ntese de voz em tr\^{e}s partes: 
+
+\begin{enumerate}
+	\item \textbf{Pulm\~{o}es} - S\~{a}o eles os respons\'{a}veis por gerar o fluxo de ar, que \'{e} ocasionado atrav\'{e}s da contra{\c c}\~{a}o do org\~{a}o pelo diafragma. Tal fluxo, funciona como um "combust\'{i}vel para a voz.
+	\item \textbf{Aparelho digestivo} 
+	\begin{enumerate}
+		\item{} \textbf{Laringe} - Local onde s\~{a}o encontrada as pregas vocais, que s\~{a}o dois m\'{u}sculos que tem a responsabilidade de modelar a voz atrav\'{e}s de sua contra{\c c}\~{a}o e/ou relaxamento. Quando o fluxo de ar que sai dos pulm\~{o}es passa faringe, as cordas vocais vibram com maior ou menor intensidade, logo pode-se perceber que a voz humana \'{e} formada pela intera{\c c} de duas principais for{\c c}as: A for{\c c}a com que o fluxo de ar sai dos pulm\'{o}es e for{\c c} muscular da laringe.
+		\item{} \textbf{Articuladores} - Eles s\~{a}o localizados na cavidade bucal e s\~{a} o respons\'{a}veis por fazer a articula{\c c}\~{a}o do fluxo de ar vindo dos pulm\~{o}es. Sendo que os principais articuladores s\~{a}o: l\'{a}bios, l\'{i}ngua, dentes e mand\'{i}bula.
+	\end{enumerate}
+\end{enumerate}
+
+\par Vale ressaltar que a partir da caracter\'{i}stica vibrat\'{o}ria das cordas vocais, \'{e} poss\'{i}vel determinar a frequ\^{e}ncia da voz humana, o que nos torna capaz de fazer a dintin{\c c}\~{a}o de g\^{e}neros e at\'{e} mesmo reconhecimento de voz e comandos.
+
+\par RECONHECIMENTO DE LOCUTORES...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECAO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sinais Digitais}
+\label{sinais_digitais}
+\par Os dados podem ser representados de duas maneiras: digital ou anal\'{o}gica. Sendo a primeira forma uma onda eletromagn\'{e}tica que pode assumir infinitos valores ao longo do tempo e um excelente exemplo desse tipo de sinal, \'{e} a voz humana. J\'{a} a segunda forma tem um n\'{u}mero finito de valores discretos no tempo. Em outras palavras, o sinal digital assumi valores em determinados instantes de tempo e sua representa{\c c}\~{a}o pode ser baseada na discretiza{\c c}\~{a}o de um sinal anal\'{o}gico.
+
+\par Podemos realizar a convers\~{a}o de um sinal anal\'{o}gico para o digital, atrav\'{e}s de 3 etapas:
+\begin{enumerate}
+	\item{} \textbf{Amostragem:} Consiste no processo de obter amostras de um sinal anal\'{o}gico em instantes de tempo com espa{\c c}os iguais. Vale ressaltar que para se obter sucesso nesse processo de amostragem, \'{e} necess\'{a}rio seguir o Teorema de Nyquist. Tal teorema define que para realizar a amostragem de um sinal, \'{e} necess\'{a}rio no m\'{i}nimo ter uma taxa de amostra duas vezes maior que a m\'{a}xima frequ\^{e}ncia do sinal anal\'{o}gico. Caso n\'{a}o se obtenha tal taxa de amostragem ocorrer\'{a} um efeito chamado de \textit{aliasing}, que consiste na medi{\c c}\~{a}o erronea de uma frequ\^{e}ncia mais alta como sendo mais baixa. Um bom exemplo da apli{\c c}\~{a}o de tal teorema \'{e} na digitaliza{\c c}\~{a}o da voz humana, que possui uma frequ\^{e}ncia m\'{a}xima de 4 mil Hertz. Logo, para realizar amostragem desse sinal, seria necess\'{a}rio no m\'{i}nimo 8 mil amostras por segundo.
+	\item{} \textbf{Quantiza{\c c}\~{a}o:} Esse processo consiste atribui{\c c}\~{a}o de valores discretos para as amplitudes do sinal anal\'{o}gico, que pertencem a um intervalo cont\'{i}nuo de valores. Cada amplitude \'{e} alocada ao n\'{i}vel de valor discreto mais pr\'{o}ximo, o que diminui assim os erros absolutos. Vale ressalvar que o n\'{u}mero de n\'{i}veis \'{e} definido pelo n\'{u}mero de \textit{bits} que ser\~{a}o utilizados na etapa posterior de codifica{\c c}\~{a}o, que \'{e} definido como sendo ${2^n}$, onde ${n}$ \'{e} o n\'{u}mero de bits que ser\'{a} usado.
+	\par Para realizar a quantiza{\c c}\~{a}o, pode-se utilizar duas t\'{e}cnicas diferentes para diminuir a quantidade de erros do processo:
+	\begin{enumerate}
+		\item {} \textbf{Quantiza{\c c}\~{a}o uniforme:} Essa t\'{e}cnica \'{e} aplicado em sinais que possuam uma pequena diferen{\c c}a entre sua amplitude m\'{a}xima e m\'{i}nima. O processo consiste em dividir de forma igualmente espa{\c c}ados os intervalos de amplitude, ou seja de forma uniforme.
+		\item {} \textbf{Quantiza{\c c}\~{a}o n\~{a}o uniforme:} \'{E} utilizada para sinais que possuam um range din\^{a}mico alto, ou seja existe uma grande diferen{\c c}a entre a amplitude \'{a}xima e m\'{i}nima. Esse processo consiste em encontrar valores adequados para regi\~{a}o do sinal, o que exige diferentes quantifizadores. Um solu{\c c}\~{a}o alternativa para esse tipo de abordagem, seria comprimir o sinal, e logo ap\'{o}s utilizar a t\'{e}cnica de quantiza{\c c}\~{a}o uniforme.
+	\end{enumerate}
+	
+	\par  Vale ressaltar que cada t\'{e}cnica descrita anteriormente depender\'{a} do sinal a ser quantificado.
+	
+	\item{}	\textbf{Codifica{\c c}\~{a}o:} Etapa que consiste na modifica{\c c}\~{a}o de um sinal para uma aplica{\c c}\~{a}o espec\'{i}fica, como por exemplo o armazenamento ou transmiss\~{a}o de dados.
+\end{enumerate}
+
+\par Um sinal digitalizado possui algumas vantagens em rela{\c c}\~{a}o ao sinal anal\'{o}gico. As duas principais s\~{a}o que os dados podem ser compressados e corrigados, caso necess\'{a}rio. 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Arquivos Ac\'{u}sticos no Formato \textit{WAVE}}
 \label{secao_formato wave}
-
 \par\textit{Waveform audio file format} \'{e} a abrevia\c{c}\~{a}o de \textit{WAVE} ou simplesmente \textit{WAV}, que \'{e} um tipo de formato de arquivo de \'{a}udio que foi desenvolvido pela \textit{Microsoft} em conjunto com a IBM. O formato \textit{WAVE} \'{e} amplamente utilizado em uma variedade de trabalhos, sejam eles cient\'{i}ficos ou profissionais, visto que o formato permite uma fiel representa\c{c}\~{a}o dos dados digitalizados, uma vez que os dados digitalizados podem ser armazenados sem sofrer obrigatoriamente um processo de compress\~{a}o, o que evita perdas. Por\'{e}m, devido a essa caracter\'{i}stica o \textit{WAV} ocupa muito mais espa\c{c}o que os demais formatos de arquivos de \'{a}udios. 
 
-\par A Tabela 2.1 mostra a estrutura de um arquivo \textit{WAVE}. Basicamente o arquivo \'{e} divido em 2 grandes blocos, sendo o primeiro bloco um cabe{\c c}alho RIFF e o segundo bloco \'{e} divido em dois sub-blocos, sendo um com informa{\c c}\~{o}es referentes ao formato \textit{WAVE} e o outro com os dados do \'{a}udios.
+\par Na Tabela 2.1 pode-se ver a estrutura de um arquivo \textit{WAVE}. Basicamente o arquivo \'{e} divido em 2 grandes blocos, sendo o primeiro bloco um cabe{\c c}alho RIFF e o segundo bloco \'{e} divido em dois sub-blocos, sendo um com informa{\c c}\~{o}es referentes ao formato \textit{WAVE} e o outro com os dados do \'{a}udios.
 
 \par Vale ressaltar que os valores mais comuns para cada amostra de um  arquivo \textit{WAVE} pode ser 8 \textit{bits} ou 16 \textit{bits}. Um \'{a}udio de 8 \textit{bits} siginifica que o valor da amplitude do sinal, de cada amostra, pode ser representado por 256 valores, sendo 127 positivos e 128 negativos. J\'{a} para um arquivo 16 \textit{bits} a amplitude do sinal pode ser representado por 65536 valores, com 32757 positivos e 32768 negativos. Para \textit{WAVE} de 16 \textit{bits} \'{e} utilizada a codifica{\c c}\~{a}o de complemento de 2 para representar o valor da amplitude do sinal. Assim, o valor do \textit{bit} mais significativo representa se o sinal \'{e} negaivo ou positivo.
 
@@ -399,7 +436,7 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 \vspace*{+10pt}
 
 \begin{table}[h] 
-
+	\centering
 	\caption{Estrutura de um arquivo \textit{WAVE}}
 	\begin{tabular}{c|c|c|c}
 		\textbf{Classe} & \textbf{Posi\c{c}\~{a}o \textit{(bytes)}} & \textbf{Tamanho \textit{(bytes)}} & \textbf{Descri\c{c}\~{a}o}\\
@@ -422,10 +459,15 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 		Dados & 44 & 4 & Demostra os dados reais da m\'{u}sica.
 		
 	\end{tabular}
-\end{table}     
+\end{table}    
+. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECAO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Reconhecimento de Padr\~{o}es e Vetores de Caracter\'{i}sticas}
+\label{vetores de caracterisctica}
 
-
-
+\par Neste trabalho, vetores de caracter\'{i}sticas s\~{a}o vetores com tamanho fixo que armazenam valores 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -443,24 +485,13 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 \begin{equation}
 	\epsilon = (E(W0[.]) / (\sum_{k = 0}^{T-1}E(Wk[.])))
 \end{equation}  
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Vetores de Caracter\'{i}sticas}
-\label{vetores de caracterisctica}
-\par Neste trabalho, vetores de caracter\'{i}sticas s\~{a}o vetores com tamanho fixo que armazenam valores 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% SECAO
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{N\'{i}veis Cr\'{i}ticos de Energia}
-\label{niveis criticos de energia}
-\par Niveis de energia sao...
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Similaridade baseada em distancias}
+\label{similaridade_baseada_em_distancias}
+dist absoluta
+dist euclidiana
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CAPITULO 3

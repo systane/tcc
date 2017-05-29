@@ -1,21 +1,22 @@
 \select@language {brazil}
-\contentsline {chapter}{\numberline {1}Introdu\c {c}\~{a}o}{23}
-\contentsline {section}{\numberline {1.1}Introdu\c {c}\~{a}o}{23}
-\contentsline {section}{\numberline {1.2}Objetivo}{23}
-\contentsline {section}{\numberline {1.3}justificativa}{24}
-\contentsline {section}{\numberline {1.4}Motiva\c {c}\~{a}o}{24}
-\contentsline {section}{\numberline {1.5}Metodologia}{25}
-\contentsline {section}{\numberline {1.6}Exequibilidade}{26}
-\contentsline {section}{\numberline {1.7}Organiza\c {c}\~{a}o do trabalho}{26}
-\contentsline {chapter}{\numberline {2}Revis\~{a}o Bibliogr\'{a}fica}{29}
-\contentsline {section}{\numberline {2.1}Fundamenta\c {c}\~{a}o da Verifica\c {c}\~{a}o de Locutores}{29}
-\contentsline {section}{\numberline {2.2}Arquivos Ac\'{u}sticos no Formato \textit {WAVE}}{29}
-\contentsline {section}{\numberline {2.3}Energia}{31}
-\contentsline {section}{\numberline {2.4}Vetores de Caracter\'{i}sticas}{32}
-\contentsline {section}{\numberline {2.5}N\'{i}veis Cr\'{i}ticos de Energia}{32}
-\contentsline {chapter}{\numberline {3}Detalhamento do Trabalho Proposto}{33}
-\contentsline {section}{\numberline {3.1}Coleta e elabora{\c c}\~{a}o do banco de \'{a}udios}{33}
-\contentsline {chapter}{\numberline {4}Testes e Resultados}{35}
-\contentsline {chapter}{\numberline {5}Conclus\~{o}es e Trabalhos Futuros}{37}
-\contentsline {chapter}{Refer\^{e}ncias}{37}
-\contentsline {chapter}{Ap\^{e}ndice I - Gr\'{a}ficos das caracter\'{i}sticas extra\'{i}das}{41}
+\contentsline {chapter}{\numberline {1}Introdu\c {c}\~{a}o}{25}
+\contentsline {section}{\numberline {1.1}Introdu\c {c}\~{a}o}{25}
+\contentsline {section}{\numberline {1.2}Objetivo}{25}
+\contentsline {section}{\numberline {1.3}justificativa}{26}
+\contentsline {section}{\numberline {1.4}Motiva\c {c}\~{a}o}{26}
+\contentsline {section}{\numberline {1.5}Metodologia}{27}
+\contentsline {section}{\numberline {1.6}Exequibilidade}{28}
+\contentsline {section}{\numberline {1.7}Organiza\c {c}\~{a}o do trabalho}{29}
+\contentsline {chapter}{\numberline {2}Revis\~{a}o Bibliogr\'{a}fica}{31}
+\contentsline {section}{\numberline {2.1}Fundamenta\c {c}\~{a}o da Verifica\c {c}\~{a}o de Locutores}{31}
+\contentsline {section}{\numberline {2.2}Sinais Digitais}{32}
+\contentsline {section}{\numberline {2.3}Arquivos Ac\'{u}sticos no Formato \textit {WAVE}}{34}
+\contentsline {section}{\numberline {2.4}Reconhecimento de Padr\~{o}es e Vetores de Caracter\'{i}sticas}{35}
+\contentsline {section}{\numberline {2.5}Energia}{35}
+\contentsline {section}{\numberline {2.6}Similaridade baseada em distancias}{36}
+\contentsline {chapter}{\numberline {3}Detalhamento do Trabalho Proposto}{37}
+\contentsline {section}{\numberline {3.1}Coleta e elabora{\c c}\~{a}o do banco de \'{a}udios}{37}
+\contentsline {chapter}{\numberline {4}Testes e Resultados}{39}
+\contentsline {chapter}{\numberline {5}Conclus\~{o}es e Trabalhos Futuros}{41}
+\contentsline {chapter}{Refer\^{e}ncias}{41}
+\contentsline {chapter}{Ap\^{e}ndice I - Gr\'{a}ficos das caracter\'{i}sticas extra\'{i}das}{45}

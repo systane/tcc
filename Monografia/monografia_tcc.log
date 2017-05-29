@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.4.19)  22 MAY 2017 17:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.4.19)  29 MAY 2017 19:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -958,62 +958,70 @@ Package tocloft Info: The document has chapter divisions on input line 44.
 \cftsubtabindent=\skip116
 \cftsubtabnumwidth=\skip117
 )
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip118
+\enit@outerparindent=\dimen270
+\enit@toks=\toks61
+\enit@inbox=\box62
+\enitdp@description=\count194
+)
 (./monografia_tcc.aux)
 \openout1 = `monografia_tcc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 44.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 44.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 45.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 45.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 44.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 44.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 45.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 45.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 44.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 44.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 45.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 45.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 44.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 44.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 45.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 44.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count194
-\scratchdimen=\dimen270
-\scratchbox=\box62
-\nofMPsegments=\count195
-\nofMParguments=\count196
-\everyMPshowfont=\toks61
-\MPscratchCnt=\count197
-\MPscratchDim=\dimen271
-\MPnumerator=\count198
-\makeMPintoPDFobject=\count199
-\everyMPtoPDFconversion=\toks62
+\scratchcounter=\count195
+\scratchdimen=\dimen271
+\scratchbox=\box63
+\nofMPsegments=\count196
+\nofMParguments=\count197
+\everyMPshowfont=\toks62
+\MPscratchCnt=\count198
+\MPscratchDim=\dimen272
+\MPnumerator=\count199
+\makeMPintoPDFobject=\count266
+\everyMPtoPDFconversion=\toks63
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -1065,7 +1073,7 @@ ABD: EveryShipout initializing macros
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.14} into 
 your preamble.
- on input line 44.
+ on input line 45.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -1103,58 +1111,58 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+txsya on input line 73.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 74.
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 73.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+wasy on input line 73.
+LaTeX Font Info:    Try loading font information for U+wasy on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+txmia on input line 73.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 73.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 4291) in paragraph at lines 94--95
+Underfull \hbox (badness 4291) in paragraph at lines 95--96
 []|\OT1/txr/m/n/10.95 Monografia apre-sen-tada ao Pro-grama de
  []
 
 
-Underfull \hbox (badness 1132) in paragraph at lines 94--95
+Underfull \hbox (badness 1132) in paragraph at lines 95--96
 \OT1/txr/m/n/10.95 gradua[][]ao em Ci[]encia da Computa[][]ao da
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--95
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--98
+Underfull \hbox (badness 10000) in paragraph at lines 93--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--98
+Underfull \hbox (badness 10000) in paragraph at lines 93--99
 
  []
 
 
-Overfull \hbox (4.3807pt too wide) in paragraph at lines 84--102
+Overfull \hbox (4.3807pt too wide) in paragraph at lines 85--103
 [][] 
  []
 
@@ -1162,32 +1170,32 @@ Overfull \hbox (4.3807pt too wide) in paragraph at lines 84--102
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 121--127
+Underfull \hbox (badness 10000) in paragraph at lines 122--128
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--131
+Underfull \hbox (badness 10000) in paragraph at lines 129--132
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--131
+Underfull \hbox (badness 10000) in paragraph at lines 129--132
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--137
+Underfull \hbox (badness 10000) in paragraph at lines 133--138
 
  []
 
 [3] [4] [5] [6] [7] [8] [9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 213--217
+Underfull \hbox (badness 10000) in paragraph at lines 214--218
 
  []
 
 [12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 229--233
+Underfull \hbox (badness 10000) in paragraph at lines 230--234
 
  []
 
@@ -1204,88 +1212,90 @@ Underfull \hbox (badness 10000) in paragraph at lines 229--233
 \tf@toc=\write7
 \openout7 = `monografia_tcc.toc'.
 
- [22]
+ [22] [23] [24
+
+]
 Cap\'{\i }tulo 1.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23
+ [25]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]
-Underfull \vbox (badness 5231) has occurred while \output is active []
-
- [24]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 337.
+ [26]
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 338.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 337.
- [25]
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 338.
+ [27]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26]
-[27] [28
+ [28]
+[29] [30
 
 ]
 Cap\'{\i }tulo 2.
+[31] [32]
+Overfull \hbox (3.13156pt too wide) in paragraph at lines 413--414
+[]\OT1/txr/bx/n/12 Quantiza[][]ao n[]ao uni-forme: []\OT1/txr/m/n/12 E uti-li-z
+ada para si-nais que pos-suam um range din[]amico
+ []
 
-LaTeX Warning: Citation `BEIGI2011' on page 29 undefined on input line 384.
-
-[29]
-Overfull \hbox (61.03189pt too wide) in paragraph at lines 404--425
-[][] 
+[33]
+Overfull \hbox (61.03189pt too wide) in paragraph at lines 441--462
+ [][] 
  []
 
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [30]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [34]
+Underfull \vbox (badness 2221) has occurred while \output is active []
 
- [31]
-[32]
+ [35]
+[36]
 Cap\'{\i }tulo 3.
-[33
+[37
 
-] [34
+] [38
 
 ]
 Cap\'{\i }tulo 4.
-[35] [36
+[39] [40
 
 ]
 Cap\'{\i }tulo 5.
-[37] [38
+[41] [42
 
-] [39] [40] [41] (./monografia_tcc.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+] [43] [44] [45] (./monografia_tcc.aux) ) 
 Here is how much of TeX's memory you used:
- 26648 strings out of 494925
- 635284 string characters out of 6180251
- 795211 words of memory out of 5000000
- 29384 multiletter control sequences out of 15000+600000
+ 26940 strings out of 494925
+ 640192 string characters out of 6180251
+ 797211 words of memory out of 5000000
+ 29672 multiletter control sequences out of 15000+600000
  57173 words of font info for 131 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  62i,22n,96p,1039b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txf
-onts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/times/utmri8a.pfb>
-Output written on monografia_tcc.pdf (41 pages, 93144 bytes).
+{/usr/share/texlive/texmf-dist/fonts/e
+nc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/
+rtxi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
+utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on monografia_tcc.pdf (45 pages, 100204 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 124 compressed objects within 2 object streams
+ 191 PDF objects out of 1000 (max. 8388607)
+ 133 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
