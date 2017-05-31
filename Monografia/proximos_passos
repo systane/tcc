@@ -1,0 +1,45 @@
+proximo passos:
+
+1 - Tirar a dupla chamada da função analisa_dados_brutos;
+2 - organizar as ideias para automatizar as chamadas dos audios nas execuções do programa. Preciso executar o programa uma vez para cada repetição dos 9 comandos gravados;
+3 - fazer um shell script para poder executar o programa e criar um arquivo txt de acordo com o nome do audio passado como parametro na execução;
+4 - o shell script vai ler o comando digitado no Banco_de_comando e logo em seguida procurará na pasta Banco_de_audio o arquivo com o respectivo nome lido do txt de indice [1].
+5 - esse mesmo script em shell criará um txt com o respectivo nome do audio executado.
+
+
+referencias:
+http://www.cplusplus.com/doc/tutorial/files/
+http://www.hardware.com.br/comunidade/ler-arquivos/1061210/
+https://pt.wikibooks.org/wiki/Programar_em_C%2B%2B/Manipulando_strings
+https://git-scm.com/book/pt-br/v1/Git-Essencial-Visualizando-o-Hist%C3%B3rico-de-Commits
+http://rogerdudler.github.io/git-guide/index.pt_BR.html
+http://soundfile.sapp.org/doc/WaveFormat/
+
+S. Theodoridis and K. Koutroumbas
+Pattern Recognition.,
+Academic Press, 1999.
+
+http://www.vision.ime.usp.br/~teo/publications/qualificacao/node5.html
+
+https://pt.wikipedia.org/wiki/Reconhecimento_de_padr%C3%B5es
+
+http://paginas.fe.up.pt/~jmsa/recpad/#O_que_e
+
+https://www.ime.usp.br/posbioinfo/cv2012/reconhecimentoPadroes_FabricioLopes.pdf
+
+https://www.maxwell.vrac.puc-rio.br/11498/11498_5.PDF
+
+file:///home/nando/Downloads/Capitulo_2_mestrado.pdf
+
+https://www.eng.tau.ac.il/~michaelm/duch.pdf
+
+https://www.tecmundo.com.br/seguranca/3014-inteligencia-artificial-reconhecimento-de-padroes.htm
+
+https://repositorio.ufsc.br/bitstream/handle/123456789/80484/144135.pdf?sequence=1
+
+https://www.researchgate.net/profile/Pedro_Prado4/publication/277123850_Pattern_recognition_algorithms/links/55aa982b08ae481aa7fbc655.pdf
+
+http://www.lac.inpe.br/~demisio/univ/pdi/classificacaodeimagens.pdf
+
+https://docs.ufpr.br/~soniaisoldi/ce076/9ANALISEAGRUPAMENTOS.pdf
+
