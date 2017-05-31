@@ -349,7 +349,7 @@ Keywords: Signal processing. Speaker recognition. Acoustics. Bark scale.
 \end{itemize}
 sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para cada um dos 11 comandos referidos, totalizando 110 arquivos de \'{a}udio no formato MPEG-4.Tais arquivos foram convertidos para o formato \textit{WAVE} de 16 \textit{bits} PCM usando o programa \textit{Audacity}. Vale ressaltar que todos os \'{a}udios foram gravados em um ambiente que proporciona-se um certo grau de isolamento sonoro, para assim se obter um som com menos ru\'{i}do.
 \par A partir dessa etapa inicial foi feita a extra\c{c}\~{a}o dos dados brutos contidos nos arquivos \textit{WAVE}. Para isso foi utilizada uma biblioteca fornecida pelo Prof.Dr.Rodrigo Capobianco Guido do Departamento de Ci\^{e}ncia da Comput{\c c}\~{a}o e Estat\'{i}stica (DCCE), IBILCE/Unesp. Tal biblioteca, escrita em C/C++, tem a fun\c{c}\~{a}o de separar o cabe{\c c}alho dos arquivos \textit{WAVE}. A partir desse ponto, a biblioteca foi modificada para extrair os dados brutos e guardar as amplitudes dos sinais em arquivos de texto. Foi realizada a automa{\c c}\~{a}o de todo o processo que exigia interven{\c c}\~{a}o humana para a execu{\c c}\~{a}o do algoritmo, como a passagem  de \'{a}udios como par\~{a}metro a cada nova execu{\c c}\~{a}o, cria{\c c}\~{a}o de arquivos para extra{\c c}\~{a}o dos valores das amplitudes dos sinais, entre outros. Toda essa automatiza{\c c}\~{a}o foi implementada com a utiliza{\c c}\~{a}o de \textit{scripts} escritos na linguagem \textit{Shell script}.
-\par Posteriormente a etapa de extra{\c c}\~{a}o das amplitudes dos sinais digitalizados, foi realizada a extra{\c c}\~{a}o das caracter\'{i}sticas dos \'{a}udios analisados. Essa etapa consiste na utiliza{\c c}\~{a}o do m\'{e}todo A3 - descrito com maiores detalhes no \ref{cap2} - para obter assim, vetores de caracter\'{i}sticas. Tal processo \'{e} essencial no presente trabalho, pois os valores obtidos no processo de extra{\c c}\~{a}o s\~{a}o vari\'{a}veis e demasiadamente grandes, sendo que o classificador exige valores menores e com tamanho fixo.
+\par Posteriormente a etapa de extra{\c c}\~{a}o das amplitudes dos sinais digitalizados, foi realizada a extra{\c c}\~{a}o das caracter\'{i}sticas dos \'{a}udios analisados. Essa etapa consiste na utiliza{\c c}\~{a}o do m\'{e}todo A3 - descrito com maiores detalhes no cap\'{i}tulo \ref{cap2} - para obter assim, vetores de caracter\'{i}sticas. Tal processo \'{e} essencial no presente trabalho, pois os valores obtidos no processo de extra{\c c}\~{a}o s\~{a}o vari\'{a}veis e demasiadamente grandes, sendo que o classificador exige valores menores e com tamanho fixo.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -378,8 +378,8 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Fundamenta\c{c}\~{a}o da Verifica\c{c}\~{a}o de Locutores}
-\label{secao_reconhecimento}
+\section{A Voz Humana}
+\label{voz_humana}
 \par A voz \'{e} uma caracter\'{i}stica \'{u}nica dos seres humanos, que foi desenvolvida a partir da necessidade do homem em socializar, e assim poder se comunicar entre seus semelhantes. Em outras palavras, essa nossa caracter\'{i}stica foi adquirida atrav\'{e}s de um processo evolutivo, assim sendo n\'{a}o somos dotados de um aparelho espec\'{i}fico para fala, apenas adaptamos um conjunto de org\~{a}os da parte superior do aparelho digestivo e do respirat\'{o} rio para produ{\c c}\~{a}o de fonemas.
 
 \par De modo geral, podemos dividir o processo de s\'{i}ntese de voz em tr\^{e}s partes: 
@@ -465,15 +465,36 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Reconhecimento de Padr\~{o}es e Vetores de Caracter\'{i}sticas}
-\label{vetores de caracterisctica}
+\label{reconhecimento_padroes_vetores_caracteristicas}
 
-\par Neste trabalho, vetores de caracter\'{i}sticas s\~{a}o vetores com tamanho fixo que armazenam valores 
+\par Reconhecimento de Padr\~{o}es tamb\'{e}m conhecido como \textit{Pattern Recognition} ou simplesmente como PR, \'{e} uma \'{a}rea de estudo que tem como objetivo classificar objetos em determinadas classes ou categorias com base nas extra{\c c}\~{a}o de caracter\'{i}sticas relevantes de tais objetos. De modo geral, as etapas do PR pode ser dividida da seguinte maneira:
+
+\begin{itemize}
+	
+	\item{
+		\textbf{Extra{\c c}\~{a}o das caracter\'{i}sticas:} Principal etapa de todo o processo de \textit{Pattern Recognition}, pois \'{e} nesse momento que \'{e} realizada a redu{\c c}\~{a}o de dimensionalidade do objeto. Caso esse processo seja mal elaborado, ocorrer\'{a} perdas de caracter\'{i}sticas significativas, que podem tornar a classifica{\c c}\~{a}o dispendiosa. Portanto, \'{e} necess\'{a}rio ter um conhecimento espec\'{i}fico sobre o problema, para poder realizar a redu{\c c}\~{a}o de dimensionalidade sem que ocorr\'{a} perdas de informa{\c c}\~{o}es relevantes do objeto e tamb\'{e}m que diminua o esfor{\c c}o computacional. 
+		\par Nessa etapa \'{e} realizada tamb\'{e}m a extra{\c c}\~{a}o das caracter\'{i}sticas do objeto, logo \'{e} interessante realizar uma sele{\c c}\~{a}o de modo que tais caracter\'{i}sticas sejam relevantes na classifica{\c c}\~{a}o.
+	}		 
+	
+	\item{
+		\textbf{Classifica{\c c}\~{a}o do objeto:} Etapa que determina os procedimentos para realizar a classifica{\c c}\~{a}o do objeto em um determinada classe. Diferentemente da fase anterior, o classificador pode ser definido independente do problema, uma vez que os m\'{e}todos usados s\~{a}o os mesmos .
+		\par\'{E} nessa etapa que o classificador aprende a distinguir \'{a} qual classe o objeto pertencer\'{a}, de modo que esse aprendizado pode ser classificado em duas principais categorias:
+		
+		\begin{itemize}
+			\item \textbf{Aprendizagem supervisionada:} Seu funcionamento \'{e} baseado em exemplos de entradas e sa\'{i}das previamente conhecidos, o que permite assim, aprender uma regra gen\'{e}rica para classificar as entradas posteriores. Nesse trabalho \'{e} utilizada a dist\^{a}ncia Euclidiana para tomar a decis\~{a}o de classifica{\c c}\~{a}o dos comandos falados.
+			\item \textbf{Aprendizagem n\~{a}o supervisionada:} Ao contr\'{a}rio da aprendizagem supervisionada, nessa t\'{e}cnica n\~{a}o \'{e} utilizado nenhum conhecimento pr\'{e}vio para se classificar os objetos.
+		\end{itemize}
+}	
+\end{itemize}
+
+\par Vale ressaltar que o conceito de caracter\'{i}stica definido aqui \'{e} entendido como qualquer medida \'{u}til que possa ser extra\'{i}da no processo de identifica{\c c}\~{a}o de um padr\~{a}o. Nesse trabalho a caracter\'{i}stica escolhida para fazer a classifica{\c c}\~{a}o dos sinais foi sua energia. Ao final do processo de extra{\c c}\~{a}o todos os \'{a}udios foram convertidos em vetores de caracter\'{i}sticas com tamanhos fixos.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Energia}
 \label{energia}
-\par A defini{\c c}\~{a}o de energia est\'{a} relacionada ao conceito de conseguir realizar trabalho. Neste projeto, ser\'{a} considerada energia a capacidade das estruturas voc\'{a}licas e dos pulm\~{o}es de produzir um sinal ac\'{u}stico. A equa{\c c}\~{a}o 2.1 defini a energia total E(s[.]), de um dado sinal de \'{a}udio digitalizado s[.], de tamanho M.
+\par A defini{\c c}\~{a}o de energia est\'{a} relacionada ao conceito de conseguir realizar trabalho. Neste projeto, ser\'{a} considerada energia a capacidade das estruturas voc\'{a}licas e dos pulm\~{o}es de produzir um sinal ac\'{u}stico. Na equa{\c c}\~{a}o 2.1 definida a energia total E(s[.]), de um dado sinal de \'{a}udio digitalizado s[.], de tamanho M.
 
 \begin{equation}
 	E(s[.])=\sum_{i = 0}^{M-1} (Si)^2
@@ -492,6 +513,24 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 \label{similaridade_baseada_em_distancias}
 dist absoluta
 dist euclidiana
+
+\par Quando precisamos agrupar objetos, normalmente utilizamos como quesito a similaridade ou dissimilaridade entre tais objetos. A primeira mede o quanto dois ou mais objetos s\~{a}o parecidos entre si, enquanto que a segunda analisa o quanto dois ou mais objetos s\~{a}o diferentes.
+
+\par Em espec\'{i}fico para avaliar similaridades em determinados objetos, podemos usufruir de uma s\'{e}rie de m\'{e}todos, sendo um dos mais conhecidos a dist\^{a}ncia Euclidiana, que pode ser calculada com base na equa{\c c}\~{a}o 2.3, onde P = $\{$P1, P2, ..., Pn$\}$ e Q = $\{$Q1, Q2, ..., Qn$\}$ s\~{a}o dois vetores de caracter\'{i}sticas e a dist\^{a}ncia d ser\'{a} o n\'{i}vel de similaridade entre os dois vetores. A similaridade entre dois objetos ser\'{a} m\'{a}xima quando P = Q, caso contr\'{a}rio ser\'{a} m\'{i}nima.
+
+\begin{equation}
+	d =\sqrt{\sum_{i = 1}^{n}(Pi-Qi)^2}
+\end{equation}
+
+\par O classificador que \'{e} elaborado nesse presente trabalho, foi implementado com o m\'{e}todo de dist\^{a}ncia Euclidiana, visto que tal m\'{e}trica oferece al\'{e}m de simplificade, \'{o}timos resultados para reconhecimento de padr\~{o}es em sinais ac\'{u}sticos \cite{Marcel_Kfouri}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECAO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Trabalhos Correlatos}
+\label{trabalhos_correlatos}
+
+\par TRABALHOS...
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CAPITULO 3
@@ -544,6 +583,29 @@ num\'{e}rico. S\~{a}o Paulo: Pearson Prentice Hall, 2007.\end{singlespace}
 	\begin{singlespace}
 		Rodrigo Capobianco Guido. A tutorial on signal energy and its applications.
 	\end{singlespace}
+
+
+\bibitem{Marcel_Kfouri}
+\begin{singlespace}
+	Dordan, M, K.Marcel Kfouri Dordan. Verifica{\c c}\~{a}o de Locutores dependen do discurso baseada na Evolu{\c c}\~{a}o do Esfor{\c c} Voc\'{a}lico.. IBILCE, UNESP, S\~{a}o Jos\'{e} do Rio Preto (Trabalho de Conclus\~{a}o de Gradua{\c c}\~{a}o em Ci\~{e}ncia da Computa{\c c}\~{a}o), 2015.
+\end{singlespace}
+
+\bibitem{Vinicius_Francisco}
+\begin{singlespace}
+	SILVA, V. F. Identifica{\c c}\~{a}o e Classifica{\c c}\~{a}o de G\~{e}neros Musicais com Abordagens M\'{u}ltiplas de Reconhecimento de Padr\~{o}es. IBILCE, UNESP, S\~{a}o Jos\'{e} do Rio Preto (Trabalho de Conclus\~{a}o de Gradua{\c c}\~{a}o em Ci\~{e}ncia da Computa{\c c}\~{a}o), 2014.
+\end{singlespace}
+
+
+\bibitem{Ana_Paula}
+\begin{singlespace}
+	CAOBIANCO, A. P. Compara{\c c}\~{a}o de Abordagens \textit{PatternMatching} e \textit{Knowledge-Based} para Reconhecimento de Locutor Dependente de Texto. IBILCE, UNESP, S\~{a}o Jos\'{e} do Rio Preto (Trabalho de Conclus\~{a}o de Gradua{\c c}\~{a}o em Ci\~{e}ncia da Computa{\c c}\~{a}o), 2011.
+\end{singlespace}
+
+\bibitem{Algoritmo_Reconhecimento_Padroes}
+\begin{singlespace}
+	CAOBIANCO, A. P. Compara{\c c}\~{a}o de Abordagens \textit{PatternMatching} e \textit{Knowledge-Based} para Reconhecimento de Locutor Dependente de Texto. IBILCE, UNESP, S\~{a}o Jos\'{e} do Rio Preto (Trabalho de Conclus\~{a}o de Gradua{\c c}\~{a}o em Ci\~{e}ncia da Computa{\c c}\~{a}o), 2011.
+\end{singlespace}
+
 \end{thebibliography}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
