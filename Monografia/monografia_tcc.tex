@@ -307,7 +307,8 @@ Keywords: Signal processing. Speaker recognition. Acoustics. Bark scale.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introdu\c{c}\~{a}o}
 \label{cap1}
-\par asssas
+\par \textit{Speech recognition} ou reconhecimento de fala \'{e} uma \'{a}rea que ganhou destaque tanto no ambito cient\'{i}fico quanto no ind\'{u}strial. \'{E} comum encontrar nos \textit{shoppings}, \textit{smartphones}, \textit{notebooks} sistemas que fazem uso da computa{\c c}\~{a}o para poder realizar o reconhecimento de comandos, e essa realidade s\'{o} tende a aumentar com os avan{\c c}os da tecnologia em termos de \textit{hardware} e \textit{software}. 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -318,7 +319,8 @@ Keywords: Signal processing. Speaker recognition. Acoustics. Bark scale.
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{justificativa}
-\par justificar e oferecer razao suficiente para a construcao desse trabalho. Responde a pergunta do que pq fazer o trabalho, procurando os antecedentes do problema e a relevancia do assunto, argumentando sobre sua importancia pratico/teorica, colocando as possiveis contribuicoes esperadas
+\par A \'{a}rea de \textit{speech recognition} nos \'{u}ltimos anos tem ganhado um grande destaque no ambito cient\'{i}fico, o que pode ser facilmente verificado atrav\'{e}s de consultas nos mais diversos reposi\'{o}rios digitais. Al\'{e}m disso, a \'{a}rea de estudo do presente trabalho tamb\'{e}m tem ganhado destaque na ind\'{u}stria com a populariza{\c c}\~{a}o dos \textit{smartphones} com reconhecimento de voz, o que justifica ainda mais a elabora{\c c}\~{a}o desse projeto.
+\par Ademais, conv\'{e}m ressaltar que o presente trabalho utiliza a computa{\c c}\~{a}o junto com f\'{o}rmulas matem\'{a}ticas como parte de um ferramental para a resolu{\c c}\~{a}o de um problema da \'{a}rea de \textit{speech recognition}. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % SECAO
@@ -511,8 +513,6 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Similaridade baseada em distancias}
 \label{similaridade_baseada_em_distancias}
-dist absoluta
-dist euclidiana
 
 \par Quando precisamos agrupar objetos, normalmente utilizamos como quesito a similaridade ou dissimilaridade entre tais objetos. A primeira mede o quanto dois ou mais objetos s\~{a}o parecidos entre si, enquanto que a segunda analisa o quanto dois ou mais objetos s\~{a}o diferentes.
 
@@ -520,6 +520,14 @@ dist euclidiana
 
 \begin{equation}
 	d =\sqrt{\sum_{i = 1}^{n}(Pi-Qi)^2}
+\end{equation}
+
+\vspace*{+10pt}
+
+\par Outro m\'{e}todo para medir similaridade \'{e} atrav\'{e}s do uso da dist\^{a}ncia absoluta. Tal t\'{e}cnica utiliza o m\'{o}dulo da diferen{\c c}a entre dois n\'{u}meros para realizar a medi{\c c}\~{a}o, conforme \'{e} mostrado na equa{\c c}\~{a}o 2.4. Caso a diferen{\c c} seja igual a zero, temos que os dois objetos comparados s\~{a}o identicos, caso contr\'{a}rio, ser\~{a}o diferentes.
+
+\begin{equation}
+	d = |X - Y|
 \end{equation}
 
 \par O classificador que \'{e} elaborado nesse presente trabalho, foi implementado com o m\'{e}todo de dist\^{a}ncia Euclidiana, visto que tal m\'{e}trica oferece al\'{e}m de simplificade, \'{o}timos resultados para reconhecimento de padr\~{o}es em sinais ac\'{u}sticos \cite{Marcel_Kfouri}.
