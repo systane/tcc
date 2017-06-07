@@ -537,8 +537,27 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Trabalhos Correlatos}
 \label{trabalhos_correlatos}
+\par A \'{a}rea de \textit{speech recognition} tem sido bastante estudada em diversas trabalhos. Nas monografias de conclus\~{a}o de curso [2, 4, 5, 6, 12, 13, 14] \'{e} discutido temas sobre o reconhecimento de vacabul\'{a}rio restrito. J\'{a} nos artigos [15, 16] os esfor{\c c}os s\~{a}o voltados para o reconhecimento de um amplo vocabul\'{a}rio, tal como idiomas.
 
-\par TRABALHOS...
+\par Em [2], o autor utiliza conceitos como energia, limiar \textit{hard}, n\'{i}veis cr\'{i}ticos de energia, para elaborar um sistema  de reconhecimento de vocabul\'{a}rio restrito implementado na linguagem C/C++, com um classificador baseado em dist\^{a}ncia Euclidiana.
+
+\par Em [4], o autor utiliza duas abordagens diferentes para realizar o reconhecimento de voz, sendo a primeira baseada em \textit{pattern-matching} e a outra em \textit{knowledge-based}. Ao final do trabalho pode-se concluir e verificar que a segunda abordagem apresentou melhores resultados, pois utilizava intelig\^{e}ncia artificial.
+
+\par Particularmente em [5], o autor prop\~{o}em um sistema para reconhecimento de voz independente do locutor. Para isso, o autor utiliza conceitos como  \textit{Zero Crossing Rate} e energia para realizar o pr\'{e}-processamento, extra{\c c}\~{a}o de caracter\'{i}sticas e um classificador tamb\'{e}m baseado em dist\^{a}ncia Euclidiana.
+
+\par Em [7], o autor desenvolve um sistema de reconhecimento de voz baseado em automa{\c c}\~{a}o residencial via wireless. Para a elabora{\c c}\~{a}o desse projeto, o autor utiliza o dispositivo HM2007L IC, para assim realizar o reconheicmento de comandos simples, como "acender", "apagar", acender a luz", etc.
+
+\par Em [8], o objetivo do autor \'{e} melhorar a rela{\c c}\~{a}o homem-m\'{a}quina, e com isso, desenvolve um m\'{e}todo para reconhecimento de voz que uso de caracter\'{i}sticas \textit{voice-likeness}.
+
+\par Em [9] o autor tem como objetivo desenvolver um sistema para \textit{smartphone} multifuncional que al\'{e}m de realizar o reconhecimento de voz, tamb\'{e}m a fa{\c c}a a convers\~{a}o do di\'{a}logo reconhecido para texto.
+
+\par Em [13], o autor utiliza conceitos como MFCC, HMM (\textit{Hidden Markov Models}), para reconhecer um restrito vocabul\'{a}rio que contem digitos de 0 a 9.
+
+\par J\'{a} em [16], \'{e} realizada uma compara{\c c}\~{a}o de desempenho de GMMs - Modelos de Misturas Gaussianas - com DNNs - Redes Neurais Profundas - no reconhecimento de um amplo vocabul\'{a}rio Chines. 
+
+\par Em [17], com o objetivo de melhorar a efic\'{a}cia do reconhecimento de um vocabul\'{a}rio Russo amplo, foi utilizado t\'{e}cnicas \textit{knowledge-based} e estat\'{i}sticas para modelagem de fonemas.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CAPITULO 3
@@ -551,6 +570,12 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace*{-0.3cm}
+\section{Estrutura do Sistema}
+\label{estrutura_sistema}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECAO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Coleta e elabora{\c c}\~{a}o do banco de \'{a}udios}
 \par Inicialmente, foram definidos os 11 comandos que ser\~{a}o reconhecidos pelo sistema, conforme j\'{a} mencionado. Os comandos foram gravados 10 vezes em diferentes dias e hor\'{a}rios, para obter se assim, uma melhor veracidade e fidelidade \`{a} voz do locutor, pois o mesmo pode sofrer altera{\c c}\~{o}es significativas com base na varia{\c c}\~{a}o do seu humor ou estado f\'{i}sico. Como tamb\'{e}m j\'{a} mencionado, a grava{\c c}\~{a}o dos arquivos de \'{a}udio foi realizada em um ambiente fechado, para diminuir assim, a probabilidade de ru\'{i}dos nos sinais. Todos os arquivos foram gravados no formato MPEG-4, que \'{e} o formato dispon\'{i}vel no \textit{software} de grava{\c c}\~{a}o de \'{a}udio do \textit{Windows} 10, e posteriormente foram convertidos para o formato \textit{WAVE} de 16 \textit{bits} PCM, com o aux\'{i}lio do editor de \'{a}udio \textit{Audacity}. Ao total, foram gravados e convertidos 110 arquivos de \'{a}udio.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -582,20 +607,16 @@ bla bla bla...
 \begin{thebibliography}{00}
 \thispagestyle{myheadings}
 \bibliographystyle{abnt-num}
-\bibitem{PETRY2002}\begin{singlespace}PETRY, A. \textit{Reconhecimento autom\'{a}tico de locutor utilizando medidas de invariantes din\^{a}micas n\~{a}o-lineares}. 2002. 155 p. Tese (Doutorado em Ci\^{e}ncia da Computa\c{c}\~{a}o)-Instituto de Inform\'{a}tica, Universidade Federal do Rio Grande do Sul, Porto Alegre, 2002.\end{singlespace}
-\bibitem{forensic_speaker_recognition}\begin{singlespace}CAMPBELL, J. P. et al. Forensic speaker recognition: a need for caution. \textit{IEEE Signal Processing Magazine}, v. 26, n. 2, p. 95-103, 2009. doi:10.1109/msp.2008.931100.\end{singlespace}
-\bibitem{abff}\begin{singlespace}ACADEFORD. Dispon\'{i}vel em:$<$http://www.acadeffor.com.br/$>$. Acesso em: 12 ago. 2014.\end{singlespace}
-\begin{singlespace}
-num\'{e}rico. S\~{a}o Paulo: Pearson Prentice Hall, 2007.\end{singlespace}
+
 \bibitem{Guido_tutorial}
 	\begin{singlespace}
-		Rodrigo Capobianco Guido. A tutorial on signal energy and its applications.
+		GUIDO, R. C. A tutorial on signal energy and its applications. Neurocomputting, v. 179, p.264-282, 2016.
 	\end{singlespace}
 
 
 \bibitem{Marcel_Kfouri}
 \begin{singlespace}
-	Dordan, M, K.Marcel Kfouri Dordan. Verifica{\c c}\~{a}o de Locutores dependen do discurso baseada na Evolu{\c c}\~{a}o do Esfor{\c c} Voc\'{a}lico.. IBILCE, UNESP, S\~{a}o Jos\'{e} do Rio Preto (Trabalho de Conclus\~{a}o de Gradua{\c c}\~{a}o em Ci\~{e}ncia da Computa{\c c}\~{a}o), 2015.
+	DORDAN, M, K. Verifica{\c c}\~{a}o de Locutores dependente do discurso baseada na Evolu{\c c}\~{a}o do Esfor{\c c}o Voc\'{a}lico. IBILCE, UNESP, S\~{a}o Jos\'{e} do Rio Preto (Trabalho de Conclus\~{a}o de Gradua{\c c}\~{a}o em Ci\~{e}ncia da Computa{\c c}\~{a}o), 2015.
 \end{singlespace}
 
 \bibitem{Vinicius_Francisco}
@@ -609,10 +630,73 @@ num\'{e}rico. S\~{a}o Paulo: Pearson Prentice Hall, 2007.\end{singlespace}
 	CAOBIANCO, A. P. Compara{\c c}\~{a}o de Abordagens \textit{PatternMatching} e \textit{Knowledge-Based} para Reconhecimento de Locutor Dependente de Texto. IBILCE, UNESP, S\~{a}o Jos\'{e} do Rio Preto (Trabalho de Conclus\~{a}o de Gradua{\c c}\~{a}o em Ci\~{e}ncia da Computa{\c c}\~{a}o), 2011.
 \end{singlespace}
 
-\bibitem{Algoritmo_Reconhecimento_Padroes}
+\bibitem{João_Vitor_Maschio}
 \begin{singlespace}
-	CAOBIANCO, A. P. Compara{\c c}\~{a}o de Abordagens \textit{PatternMatching} e \textit{Knowledge-Based} para Reconhecimento de Locutor Dependente de Texto. IBILCE, UNESP, S\~{a}o Jos\'{e} do Rio Preto (Trabalho de Conclus\~{a}o de Gradua{\c c}\~{a}o em Ci\~{e}ncia da Computa{\c c}\~{a}o), 2011.
+	MASCHIO, J. V. D. Projeto e Implementa{\c c}\~{a}o Ac\'{u}stico-Computacional de Palavras Isoladas. IBILCE, UNESP, S\~{a}o Jos\'{e} do Rio Preto (Trabalho de Conclus\~{a}o de Gradua{\c c}\~{a}o em Ci\~{e}ncia da Computa{\c c}\~{a}o), 2017.
 \end{singlespace}
+
+\bibitem{Reconhecimento_Comandos_Falados_Portugues_Brasileiro}
+\begin{singlespace}
+	LOUREIRO, W. d. F. Reconhecimento de Comandos Falados Portugu\^{e}s Brasileiro com Par\^{a}metros de Frequ\^{e}ncia e Tempo. IBILCE, UNESP, S\~{a}o Jos\'{e} do Rio Preto (Trabalho de Conclus\~{a}o de Gradua{\c c}\~{a}o em Ci\~{e}ncia da Computa{\c c}\~{a}o), 2015.
+\end{singlespace}
+
+\bibitem{Voice_recognition_Room_automation}
+\begin{singlespace}
+	PAUL, A.; PANJA, M.; BAGCHI, M.; DAS, N.; MAZUMDER, R. M.; GHOSH, S. Voice Recognition Based Wireless Room Automation
+	System. 2016 International Conference on Intelligent Control Power and Instrumentation, 2016.
+\end{singlespace}
+
+\bibitem{Laughing_Voice_Recognition}
+\begin{singlespace}
+	SAKANO, T.; KIGAWA, T.; SUGIMOTO, M.; KUSUNOKI, F.; INAGAKI, F.; MIZOGUCHI, H. Laughing Voice Recognition Using Periodic Waveforms and Voice-likeness Features. Proceedings of the 2016 IEEE International Conference on Robotics and Biomimetics Qingdao, China, 2016.
+\end{singlespace}
+
+\bibitem{A_Smartphone-Based_Multi-Functional_Hearing}
+\begin{singlespace}
+	CHERN, A.; TSAO, Y.; CHANG, R.; HSIU-WEN, C.; YING-HUI, L. A Smartphone-Based Multi-Functional Hearing Assistive System to Facilitate Speech Recognition in the Classroom. Dispon\'{i}vel em: $<$http://ieeexplore.ieee.org/document/7938619/$>$. Acesso em: 05 jun. 2017.
+\end{singlespace}
+
+\bibitem{Fundamentals_of_speech_recognition}
+\begin{singlespace}
+	RABINER, L. R; JUANG, B. H. Fundamentals of Speech Recognition. Prentice Hall, 1993.
+\end{singlespace}
+
+\bibitem{Pattern Classification}
+\begin{singlespace}
+	DUDA, R. O.; HART, P. E.; STORK, D. G. Pattern Classification. 2. ed. Wiley-Interscience, 2000.
+\end{singlespace}
+
+\bibitem{Pattern Recognition}
+\begin{singlespace}
+	THEODORIDIS, S.; KOUTROUMBAS, K. Pattern Recognition. 4. ed, Academic Press, 2008.
+\end{singlespace}
+
+\bibitem{Reconhecimento_voz_palavras_isoladas}
+\begin{singlespace}
+	SILVA, A. G. d. Reconhecimento de Voz para Palavras Isoladas. Monografia (Gradua{\c c}\~{a}o em Engenharia da Computa{\c c}\~{a}o) - UFPE, Recife, 2009.
+\end{singlespace}
+
+\bibitem{Reconhecimento_automatico_fala_computador}
+\begin{singlespace}
+	LOUZADA, J. Reconhecimento Autom\'{a}tico de Fala por Computador. Monografia(Gradua{\c c}\~{a}o em Ci\~{e}ncia da Computa{\c c}\~{a}o) - PUC, Goi\'{a}s, 2010.
+\end{singlespace}
+
+\bibitem{Reconhecimento_padrao_formato_wave}
+\begin{singlespace}
+Piccoli, E. E. M. Reconhecimento de Padr\~{a}o em \'{A}udio no Formato Wave. IBILCE, UNESP, S\~{a}o Jos\'{e} do Rio Preto (Trabalho de Conclus\~{a}o de Gradua{\c c}\~{a}o em Ci\~{e}ncia da Computa{\c c}\~{a}o), 2014.
+\end{singlespace}
+
+\bibitem{reconhecimento_vocabulario_chines}
+\begin{singlespace}
+	LI, X.; YANG, Y.; PANG, Z.; WU, X. A Comparative Study on Selecting Acoustic Modeling Units in Deep Neural Networks Based large Vocabulary Chinese Speech Recognition. Neurocomputing, v. 170, p. 251-256, 2015
+\end{singlespace}
+
+\bibitem{Reconhecimento_vocabulario_russo}
+\begin{singlespace}
+	KARPOV, A.; MARKOV, K.; KIPYATKOVA, I.; VAZHENINA, D.; RONZHIN, A.; Large Vocabulary Russian Speech Recognition Using Syntactico-statistical language Modeling. Speech Communication, v.56, p.213-228, 2014.
+\end{singlespace}
+
+
 
 \end{thebibliography}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
