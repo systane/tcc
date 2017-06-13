@@ -11,13 +11,14 @@
 \contentsline {section}{\numberline {2.1}A Voz Humana}{31}
 \contentsline {section}{\numberline {2.2}Sinais Digitais}{32}
 \contentsline {section}{\numberline {2.3}Arquivos Ac\'{u}sticos no Formato \textit {WAVE}}{34}
-\contentsline {section}{\numberline {2.4}Reconhecimento de Padr\~{o}es e Vetores de Caracter\'{i}sticas}{35}
-\contentsline {section}{\numberline {2.5}Energia}{36}
-\contentsline {section}{\numberline {2.6}Similaridade baseada em distancias}{37}
-\contentsline {section}{\numberline {2.7}Trabalhos Correlatos}{38}
-\contentsline {chapter}{\numberline {3}Detalhamento do Trabalho Proposto}{39}
-\contentsline {section}{\numberline {3.1}Coleta e elabora{\c c}\~{a}o do banco de \'{a}udios}{39}
-\contentsline {chapter}{\numberline {4}Testes e Resultados}{41}
-\contentsline {chapter}{\numberline {5}Conclus\~{o}es e Trabalhos Futuros}{43}
-\contentsline {chapter}{Refer\^{e}ncias}{43}
-\contentsline {chapter}{Ap\^{e}ndice I - Gr\'{a}ficos das caracter\'{i}sticas extra\'{i}das}{47}
+\contentsline {section}{\numberline {2.4}Reconhecimento de Padr\~{o}es e Vetores de Caracter\'{i}sticas}{36}
+\contentsline {section}{\numberline {2.5}Energia}{37}
+\contentsline {section}{\numberline {2.6}Similaridade baseada em distancias}{38}
+\contentsline {section}{\numberline {2.7}Trabalhos Correlatos}{39}
+\contentsline {chapter}{\numberline {3}Detalhamento do Trabalho Proposto}{41}
+\contentsline {section}{\numberline {3.1}Estrutura do Sistema}{41}
+\contentsline {section}{\numberline {3.2}Coleta e elabora{\c c}\~{a}o do banco de \'{a}udios}{41}
+\contentsline {chapter}{\numberline {4}Testes e Resultados}{43}
+\contentsline {chapter}{\numberline {5}Conclus\~{o}es e Trabalhos Futuros}{45}
+\contentsline {chapter}{Refer\^{e}ncias}{45}
+\contentsline {chapter}{Ap\^{e}ndice I - Gr\'{a}ficos das caracter\'{i}sticas extra\'{i}das}{50}

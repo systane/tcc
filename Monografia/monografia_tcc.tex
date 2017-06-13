@@ -307,7 +307,7 @@ Keywords: Signal processing. Speaker recognition. Acoustics. Bark scale.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introdu\c{c}\~{a}o}
 \label{cap1}
-\par \textit{Speech recognition} ou reconhecimento de fala \'{e} uma \'{a}rea que ganhou destaque tanto no ambito cient\'{i}fico quanto no ind\'{u}strial. \'{E} comum encontrar nos \textit{shoppings}, \textit{smartphones}, \textit{notebooks} sistemas que fazem uso da computa{\c c}\~{a}o para poder realizar o reconhecimento de comandos, e essa realidade s\'{o} tende a aumentar com os avan{\c c}os da tecnologia em termos de \textit{hardware} e \textit{software}. 
+\par \textit{Speech recognition} ou reconhecimento de fala \'{e} uma \'{a}rea que ganhou destaque tanto no ambito cient\'{i}fico quanto no ind\'{u}strial. \'{E} comum encontrar nos \textit{shoppings}, \textit{smartphones}, \textit{notebooks} sistemas que fazem uso da computa{\c c}\~{a}o para poder realizar o reconhecimento de comandos, e essa realidade s\'{o} tende a aumentar com os avan{\c c}os da tecnologia em termos de \textit{hardware} e \textit{software}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECAO
@@ -397,7 +397,14 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 
 \par Vale ressaltar que a partir da caracter\'{i}stica vibrat\'{o}ria das cordas vocais, \'{e} poss\'{i}vel determinar a frequ\^{e}ncia da voz humana, o que nos torna capaz de fazer a dintin{\c c}\~{a}o de g\^{e}neros e at\'{e} mesmo reconhecimento de voz e comandos.
 
-\par RECONHECIMENTO DE LOCUTORES...
+\begin{figure}[h]
+	\caption{Fisiologia da voz [19]}
+	
+	\flushright % para centralizarmos a figura
+	\includegraphics[width=13cm]{figuras/fisiologia-da-voz.png} %
+	\label{figura:trato_vocal}
+\end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -405,11 +412,14 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 \label{sinais_digitais}
 \par Os dados podem ser representados de duas maneiras: digital ou anal\'{o}gica. Sendo a primeira forma uma onda eletromagn\'{e}tica que pode assumir infinitos valores ao longo do tempo e um excelente exemplo desse tipo de sinal, \'{e} a voz humana. J\'{a} a segunda forma tem um n\'{u}mero finito de valores discretos no tempo. Em outras palavras, o sinal digital assumi valores em determinados instantes de tempo e sua representa{\c c}\~{a}o pode ser baseada na discretiza{\c c}\~{a}o de um sinal anal\'{o}gico.
 
-\par Podemos realizar a convers\~{a}o de um sinal anal\'{o}gico para o digital, atrav\'{e}s de 3 etapas:
+\par Para se realizar uma an\'{a}lise em um sinal anal\'{o}gico em um computador, precisamos necessariamente fazer sua convers\~{a}o para a forma digital, uma vez que os computadores possuem uma capacidade finita de processamento, o que o permite tratar apenas valores discreto, n\~{a}o sendo poss\'{i}vel assim processar os infinitos pontos de um sinal anal\'{o}gico. Esse processo de convers\~{a}o \'{e} denominado de digitaliza{\c c}\~{a}o, que \'{e} realizado atrav\'{e}s das 3 etapas. Na figura 2.1 \'{e} apresentado o processo de amostragem e quantiza{\c c}\~{a}o que ser\~{a}o comentados a seguir.
+
 \begin{enumerate}
 	\item{} \textbf{Amostragem:} Consiste no processo de obter amostras de um sinal anal\'{o}gico em instantes de tempo com espa{\c c}os iguais. Vale ressaltar que para se obter sucesso nesse processo de amostragem, \'{e} necess\'{a}rio seguir o Teorema de Nyquist. Tal teorema define que para realizar a amostragem de um sinal, \'{e} necess\'{a}rio no m\'{i}nimo ter uma taxa de amostra duas vezes maior que a m\'{a}xima frequ\^{e}ncia do sinal anal\'{o}gico. Caso n\'{a}o se obtenha tal taxa de amostragem ocorrer\'{a} um efeito chamado de \textit{aliasing}, que consiste na medi{\c c}\~{a}o erronea de uma frequ\^{e}ncia mais alta como sendo mais baixa. Um bom exemplo da apli{\c c}\~{a}o de tal teorema \'{e} na digitaliza{\c c}\~{a}o da voz humana, que possui uma frequ\^{e}ncia m\'{a}xima de 4 mil Hertz. Logo, para realizar amostragem desse sinal, seria necess\'{a}rio no m\'{i}nimo 8 mil amostras por segundo.
-	\item{} \textbf{Quantiza{\c c}\~{a}o:} Esse processo consiste atribui{\c c}\~{a}o de valores discretos para as amplitudes do sinal anal\'{o}gico, que pertencem a um intervalo cont\'{i}nuo de valores. Cada amplitude \'{e} alocada ao n\'{i}vel de valor discreto mais pr\'{o}ximo, o que diminui assim os erros absolutos. Vale ressalvar que o n\'{u}mero de n\'{i}veis \'{e} definido pelo n\'{u}mero de \textit{bits} que ser\~{a}o utilizados na etapa posterior de codifica{\c c}\~{a}o, que \'{e} definido como sendo ${2^n}$, onde ${n}$ \'{e} o n\'{u}mero de bits que ser\'{a} usado.
+	\item{} \textbf{Quantiza{\c c}\~{a}o:} Esse processo consiste atribui{\c c}\~{a}o de valores discretos para as amplitudes do sinal anal\'{o}gico, que pertencem a um intervalo cont\'{i}nuo de valores. Cada amplitude \'{e} alocada ao n\'{i}vel de valor discreto mais pr\'{o}ximo, o que diminui assim os erros absolutos. Vale ressalvar que o n\'{u}mero de n\'{i}veis \'{e} definido pelo n\'{u}mero de \textit{bits} que ser\~{a}o utilizados na etapa posterior de codifica{\c c}\~{a}o, que \'{e} definido como sendo ${2^n}$, onde ${n}$ \'{e} o n\'{u}mero de bits que ser\'{a} usado. De modo geral, no sinal de \'{a}udio \'{e} utilizada a quantiza{\c c}\~{a}o de 16 \textit{bits}, em outras palavras, as amplitudes de cada amostra podem assumir ${2^{16}}$  = 65536 valores. 
+	
 	\par Para realizar a quantiza{\c c}\~{a}o, pode-se utilizar duas t\'{e}cnicas diferentes para diminuir a quantidade de erros do processo:
+	
 	\begin{enumerate}
 		\item {} \textbf{Quantiza{\c c}\~{a}o uniforme:} Essa t\'{e}cnica \'{e} aplicado em sinais que possuam uma pequena diferen{\c c}a entre sua amplitude m\'{a}xima e m\'{i}nima. O processo consiste em dividir de forma igualmente espa{\c c}ados os intervalos de amplitude, ou seja de forma uniforme.
 		\item {} \textbf{Quantiza{\c c}\~{a}o n\~{a}o uniforme:} \'{E} utilizada para sinais que possuam um range din\^{a}mico alto, ou seja existe uma grande diferen{\c c}a entre a amplitude \'{a}xima e m\'{i}nima. Esse processo consiste em encontrar valores adequados para regi\~{a}o do sinal, o que exige diferentes quantifizadores. Um solu{\c c}\~{a}o alternativa para esse tipo de abordagem, seria comprimir o sinal, e logo ap\'{o}s utilizar a t\'{e}cnica de quantiza{\c c}\~{a}o uniforme.
@@ -420,22 +430,26 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 	\item{}	\textbf{Codifica{\c c}\~{a}o:} Etapa que consiste na modifica{\c c}\~{a}o de um sinal para uma aplica{\c c}\~{a}o espec\'{i}fica, como por exemplo o armazenamento ou transmiss\~{a}o de dados.
 \end{enumerate}
 
-\par Um sinal digitalizado possui algumas vantagens em rela{\c c}\~{a}o ao sinal anal\'{o}gico. As duas principais s\~{a}o que os dados podem ser compressados e corrigados, caso necess\'{a}rio. 
+
+\begin{figure}[h]
+	\centering
+	\caption{(a) Sinal na forma anal\'{o}gica. (b) Amostragem. (c) Quantiza{\c c}\~{a}o, extra\'{i}do de [18]}
+	
+	\centering % para centralizarmos a figura
+	\includegraphics[width=13cm]{figuras/quant_amost.png} % leia abaixo
+	\label{figura:quantizacao}
+\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Arquivos Ac\'{u}sticos no Formato \textit{WAVE}}
 \label{secao_formato wave}
+
 \par\textit{Waveform audio file format} \'{e} a abrevia\c{c}\~{a}o de \textit{WAVE} ou simplesmente \textit{WAV}, que \'{e} um tipo de formato de arquivo de \'{a}udio que foi desenvolvido pela \textit{Microsoft} em conjunto com a IBM. O formato \textit{WAVE} \'{e} amplamente utilizado em uma variedade de trabalhos, sejam eles cient\'{i}ficos ou profissionais, visto que o formato permite uma fiel representa\c{c}\~{a}o dos dados digitalizados, uma vez que os dados digitalizados podem ser armazenados sem sofrer obrigatoriamente um processo de compress\~{a}o, o que evita perdas. Por\'{e}m, devido a essa caracter\'{i}stica o \textit{WAV} ocupa muito mais espa\c{c}o que os demais formatos de arquivos de \'{a}udios. 
 
 \par Na Tabela 2.1 pode-se ver a estrutura de um arquivo \textit{WAVE}. Basicamente o arquivo \'{e} divido em 2 grandes blocos, sendo o primeiro bloco um cabe{\c c}alho RIFF e o segundo bloco \'{e} divido em dois sub-blocos, sendo um com informa{\c c}\~{o}es referentes ao formato \textit{WAVE} e o outro com os dados do \'{a}udios.
-
-\par Vale ressaltar que os valores mais comuns para cada amostra de um  arquivo \textit{WAVE} pode ser 8 \textit{bits} ou 16 \textit{bits}. Um \'{a}udio de 8 \textit{bits} siginifica que o valor da amplitude do sinal, de cada amostra, pode ser representado por 256 valores, sendo 127 positivos e 128 negativos. J\'{a} para um arquivo 16 \textit{bits} a amplitude do sinal pode ser representado por 65536 valores, com 32757 positivos e 32768 negativos. Para \textit{WAVE} de 16 \textit{bits} \'{e} utilizada a codifica{\c c}\~{a}o de complemento de 2 para representar o valor da amplitude do sinal. Assim, o valor do \textit{bit} mais significativo representa se o sinal \'{e} negaivo ou positivo.
-
-\par Nesse trabalho foi utilizado o formato \textit{WAV} de 16 \textit{bits} PCM (\textit{Pulse-code Modulation}) que n\~{a}o utiliza compress\~{a}o, para se obter assim uma melhor qualidade na elabora\c{c}\~{a}o deste projeto final. Foi fornecida uma biblioteca escrita em C/C++ pelo orientador para isolar o primeiro bloco referente ao cabe{\c c}alho RIFF e o sub-bloco de formato \textit{WAV} dos dados brutos, que cont\'{e}m as amplitudes dos sinais de voz digitalizados.
-
-\vspace*{+10pt}
 
 \begin{table}[h] 
 	\centering
@@ -461,8 +475,14 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 		Dados & 44 & 4 & Demostra os dados reais da m\'{u}sica.
 		
 	\end{tabular}
-\end{table}    
-. 
+\end{table}  
+
+\par Vale ressaltar que os valores mais comuns para cada amostra de um  arquivo \textit{WAVE} pode ser 8 \textit{bits} ou 16 \textit{bits}. Um \'{a}udio de 8 \textit{bits} siginifica que o valor da amplitude do sinal, de cada amostra, pode ser representado por 256 valores, sendo 127 positivos e 128 negativos. J\'{a} para um arquivo 16 \textit{bits} a amplitude do sinal pode ser representado por 65536 valores, com 32757 positivos e 32768 negativos. Para \textit{WAVE} de 16 \textit{bits} \'{e} utilizada a codifica{\c c}\~{a}o de complemento de 2 para representar o valor da amplitude do sinal. Assim, o valor do \textit{bit} mais significativo representa se o sinal \'{e} negaivo ou positivo.
+
+\par Nesse trabalho foi utilizado o formato \textit{WAV} de 16 \textit{bits} PCM (\textit{Pulse-code Modulation}) que n\~{a}o utiliza compress\~{a}o, para se obter assim uma melhor qualidade na elabora\c{c}\~{a}o deste projeto final. Foi fornecida uma biblioteca escrita em C/C++ pelo orientador para isolar o primeiro bloco referente ao cabe{\c c}alho RIFF e o sub-bloco de formato \textit{WAV} dos dados brutos, que cont\'{e}m as amplitudes dos sinais de voz digitalizados.
+
+  
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECAO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -502,7 +522,17 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 	E(s[.])=\sum_{i = 0}^{M-1} (Si)^2
 \end{equation}
 
-\par Para realizar a captura das caracter\'{i}ticas dos \'{a}udios foi utilizado o m\'{e}todo A3, que foi desenvolvido pelo pr\'{o}prio orientador em \cite{Guido_tutorial}. Para realizar a extra{\c c}\~{a}o das caracter\'{i}sticas, tal m\'{e}todo se baseia no em determinar tamanhos ou \'{a}reas proporcionais para atingir n\'{i}veis predefinidos da energia do sinal que se encontra em an\'{a}lise. A3 \'{e} ideal para avaliar os n\'{i}veis de energia de um sinal de voz digitalizado que foi gerado por um agente.
+\par Para realizar a captura das caracter\'{i}ticas dos \'{a}udios foi utilizado o m\'{e}todo A3, que foi referenciado pelo pr\'{o}prio orientador em \cite{Guido_tutorial}, conforme \'{e} mostrado na figura 2.3. Para realizar a extra{\c c}\~{a}o das caracter\'{i}sticas, tal m\'{e}todo se baseia no em determinar tamanhos ou \'{a}reas proporcionais para atingir n\'{i}veis predefinidos da energia do sinal que se encontra em an\'{a}lise. A3 \'{e} ideal para avaliar os n\'{i}veis de energia de um sinal de voz digitalizado que foi gerado por um agente.
+
+\begin{figure}[h]
+	\caption{[1]}
+	
+	\centering % para centralizarmos a figura
+	\includegraphics[width=18cm]{figuras/vetor_caracteristicas1.png}
+	\includegraphics[width=18cm]{figuras/vetor_caracteristicas2.png}
+	\label{figura:energia_vetor}
+\end{figure}
+
 \par Vale ressaltar que A3 defini um n\'{i}vel cr\'{i}tico de energia que varia de 0 a 100{\%}. Em um sinal de \'{a}udio, A3 extrai um vetor de caracter\'{i}sticas dividindo o \'{a}udio em partes proporcionais ao valor definido pelo n\'{i}vel cr\'{i}tico - par\^{a}metro C - de modo que, cria uma janela de tamanho C{\%} e extrai a caracter\'{i}stica dessa faixa de valores do sinal digitalizado, conforme \'{e} mostrado na equa{\c c}\~{a}o 2.2, onde $\epsilon$ \'{e} uma caracter\'{i}stica extraida, E(W0[.]) a energia obtida do in\'{i}cio do sinal at\'{e} o ponto final da janela definido por C, E(Wk[.]) \'{e} a energia total do sinal. Tal processo \'{e} repetido at\'{e} que se atinja o montante total de energia do \'{a}udio, de modo que, defini-se assim um vetor de caracter\'{i}sticas. 
 
 \begin{equation}
@@ -516,15 +546,15 @@ sendo que posteriormente foi realizada a grava\c{c}\~{a}o de 10 \'{a}udios para 
 
 \par Quando precisamos agrupar objetos, normalmente utilizamos como quesito a similaridade ou dissimilaridade entre tais objetos. A primeira mede o quanto dois ou mais objetos s\~{a}o parecidos entre si, enquanto que a segunda analisa o quanto dois ou mais objetos s\~{a}o diferentes.
 
-\par Em espec\'{i}fico para avaliar similaridades em determinados objetos, podemos usufruir de uma s\'{e}rie de m\'{e}todos, sendo um dos mais conhecidos a dist\^{a}ncia Euclidiana, que pode ser calculada com base na equa{\c c}\~{a}o 2.3, onde P = $\{$P1, P2, ..., Pn$\}$ e Q = $\{$Q1, Q2, ..., Qn$\}$ s\~{a}o dois vetores de caracter\'{i}sticas e a dist\^{a}ncia d ser\'{a} o n\'{i}vel de similaridade entre os dois vetores. A similaridade entre dois objetos ser\'{a} m\'{a}xima quando P = Q, caso contr\'{a}rio ser\'{a} m\'{i}nima.
+\par Em espec\'{i}fico para avaliar similaridades em determinados objetos, podemos usufruir de uma s\'{e}rie de m\'{e}todos, sendo um dos mais conhecidos a dist\^{a}ncia Euclidiana, que pode ser calculada com base na equa{\c c}\~{a}o 2.3, onde P = $\{$P1, P2, ..., Pn$\}$ e Q = $\{$Q1, Q2, ..., Qn$\}$ s\~{a}o dois vetores de caracter\'{i}sticas e a dist\^{a}ncia d ser\'{a} o n\'{i}vel de similaridade entre os dois vetores. A similaridade entre dois objetos ser\'{a} m\'{a}xima quando P = Q, caso seja igual {\`a} zero, ser\'{a} m\'{i}nima.
 
 \begin{equation}
-	d =\sqrt{\sum_{i = 1}^{n}(Pi-Qi)^2}
+	d(P, Q) = \sqrt{(P1-Q1)^2 + (P2-Q2)^2 + ... + (Pn-Qn)^2} =\sqrt{\sum_{i = 1}^{n}(Pi-Qi)^2}
 \end{equation}
 
 \vspace*{+10pt}
 
-\par Outro m\'{e}todo para medir similaridade \'{e} atrav\'{e}s do uso da dist\^{a}ncia absoluta. Tal t\'{e}cnica utiliza o m\'{o}dulo da diferen{\c c}a entre dois n\'{u}meros para realizar a medi{\c c}\~{a}o, conforme \'{e} mostrado na equa{\c c}\~{a}o 2.4. Caso a diferen{\c c} seja igual a zero, temos que os dois objetos comparados s\~{a}o identicos, caso contr\'{a}rio, ser\~{a}o diferentes.
+\par Outro m\'{e}todo para medir similaridade \'{e} atrav\'{e}s do uso da dist\^{a}ncia absoluta. Tal t\'{e}cnica utiliza o m\'{o}dulo da diferen{\c c}a entre dois n\'{u}meros para realizar a medi{\c c}\~{a}o, conforme \'{e} mostrado na equa{\c c}\~{a}o 2.4. Caso a diferen{\c c}a seja igual a zero, temos que os dois objetos comparados s\~{a}o identicos, caso contr\'{a}rio, ser\~{a}o diferentes.
 
 \begin{equation}
 	d = |X - Y|
@@ -694,6 +724,16 @@ Piccoli, E. E. M. Reconhecimento de Padr\~{a}o em \'{A}udio no Formato Wave. IBI
 \bibitem{Reconhecimento_vocabulario_russo}
 \begin{singlespace}
 	KARPOV, A.; MARKOV, K.; KIPYATKOVA, I.; VAZHENINA, D.; RONZHIN, A.; Large Vocabulary Russian Speech Recognition Using Syntactico-statistical language Modeling. Speech Communication, v.56, p.213-228, 2014.
+\end{singlespace}
+
+\bibitem{imagem_quantizacao}
+\begin{singlespace}
+	Figura extra\'{i}da de: $<$http://penta3.ufrgs.br/RNP/cap3/3.2%20Audio/$>$. Acesso em: 20 Abril 2017. 
+\end{singlespace}
+
+\bibitem{voz}
+\begin{singlespace}
+	Figura extra\'{i}da de: $<$http://www.koreapost.com.br/wp-content/uploads/2016/01/fisiologia-da-voz.jpg$>$. Acesso em: 18 Abril 2017. 
 \end{singlespace}
 
 
