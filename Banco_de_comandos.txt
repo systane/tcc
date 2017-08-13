@@ -1,1 +1,11 @@
 Alarme
+Abrir_calculadora
+Boa_noite_Logan
+Bom_dia_Logan
+Calendario
+Como_esta_o_tempo_hoje
+Oi_Logan
+Pesquisar
+Sair
+Vai_chover
+Ver_noticias

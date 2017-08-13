@@ -228,19 +228,18 @@ void analisa_dados_brutos(double * s, int m, string *name_parameter) {//sinal e 
     if(myfile.is_open()){
       cout<<"abriu o arquivo com sucesso"<<endl;
 
- //     for (index = 0; index < m; index++)     
- //       myfile<<"valor:"<<s[index]<<endl;//plotar os dados nos arquivos
+      // for (index = 0; index < m; index++){     
+      //   myfile<<"valor:"<<s[index]<<endl;//plotar os dados nos arquivos
 
-        //método A3
-        for(int k = 0; k<T; k++){
-          while(energy(&s[0], L) < ((k+1)*z))
-            L++;
+      //método A3
+      for(int k = 0; k<T; k++){
+        while(energy(&s[0], L) < ((k+1)*z))
+          L++;
         f[k] = (double)(L)/(double)(m);
         printf("\n%.5f",f[k]);
         myfile<<"valor:"<<f[k]<<endl;//plotar os dados nos arquivos          
-        }
+      }
 
-      
       myfile.close();
     }
     else{
