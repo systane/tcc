@@ -236,7 +236,8 @@ void analisa_dados_brutos(double * s, int m, string *name_parameter) {//sinal e 
           while(energy(&s[0], L) < ((k+1)*z))
             L++;
         f[k] = (double)(L)/(double)(m);
-        printf("\n%.5f",f[k]);          
+        printf("\n%.5f",f[k]);
+        myfile<<"valor:"<<f[k]<<endl;//plotar os dados nos arquivos          
         }
 
       
