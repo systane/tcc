@@ -214,8 +214,8 @@ double energy(double * input_vector, int length){// function energy
 
 double energyTeager(double * input_vector, int length){// function energy of Teager
     double e = 0;
-    for(int i = 1; i < length-1; i++)
-        e += pow(input_vector[i],2) - (input_vector[i-1] * input_vector[i+1]);
+    for(int i = 0; i < length; i++)
+        e += pow(input_vector[i],2);
     return(e);
 }
 
@@ -229,8 +229,8 @@ void analisa_dados_brutos(double * s, int m, string *name_parameter) {//sinal e 
   double C = 10; // the desired value, being 0<C<100
   int T = ((100/C) - ((int)(100/C)) == 0) ? (100/C)-1 : (int)(100/C); // the number of elements in T
   double *f = new double[T]; // dynamic vector declaration
-  //double z = energy(&s[0], m)*((double)(C)/100); //--> function energy
-  double z = energyTeager(&s[0], m)*((double)(C)/100); //--> function energy of Teager
+  double z = energy(&s[0], m)*((double)(C)/100); //--> function energy
+  //double z = energyTeager(&s[0], m)*((double)(C)/100); //--> function energy of Teager
         
   int index;
   string name = "Banco_de_amostras/"+(*name_parameter);
