@@ -23,7 +23,7 @@ int main(int i,char* n[]){
   cout<<"nome do audio: "<<name_parameter<<endl;*/
 
   void analisa_dados_brutos(double*,int, string name_parameter[]);
-  //void cria_arquivos(string name_parameter[]);  //criar os arquivos .txt parar guardar as amostragem dos audios
+  //void cria_arquivos(string name_parameter[]);                                        //criar os arquivos .txt parar guardar as amostragem dos audios
   short converte2de8para1de16(unsigned char, unsigned char);
   FILE* fr;
 
